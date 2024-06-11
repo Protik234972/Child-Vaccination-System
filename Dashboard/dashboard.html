@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Child Vaccination Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #31c5ac;
+            color: #fff;
+            padding-top: 0%;
+            min-height: 60px;
+            border-bottom: #e8491d 3px solid;
+        }
+
+        header h1 {
+            text-align: left;
+            margin: 0;
+            font-size: 36px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+        }
+
+        header h1 img {
+            padding-top: 10px;
+            width: 80px;
+            height: 80px;
+            margin-right: 175px;
+        }
+
+        .navbar {
+            display: flex;
+            background-color: #555;
+            justify-content: space-around;
+            overflow: auto;
+        }
+
+        .navbar a {
+            float: left;
+            padding: 12px;
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navbar a:hover {
+            background-color: #bb0606;
+        }
+
+        .active {
+            background-color: #555;
+        }
+
+        @media screen and (max-width: 500px) {
+            .navbar a {
+                float: none;
+                display: block;
+            }
+        }
+
+        main {
+            padding: 20px;
+            background: #fff;
+        }
+
+        main section {
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #50b3a2;
+            color: white;
+        }
+
+        .vaccine-tracker {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .vaccine {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .progress {
+            width: 80%;
+            background-color: #ddd;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 20px;
+            background-color: #50b3a2;
+        }
+
+        #reminders ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #reminders li {
+            background: #f4f4f9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-left: 10px solid #e8491d;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #reminders h2 {
+            color: #ed3608;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../Notification/Nstyle.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1> <img src="../Image/Logo.jpg" alt="Child logo">Child Vaccination Dashboard</h1>
+        </header>
+        <div class="navbar">
+            <nav>
+                <a class="active" href="./dashboard.html"><i class="fa fa-home">Home</i></a>
+                <a class="active" href="#Vaccine Schedule"><i class="fa fa-calendar">Vaccination Schedule</i></a>
+                <a class="active" href="#Vaccine Tracker"><i class="fa fa-clock-o">Vaccine Tracker</i></a>
+                <a class="active" href="#Center Info"><i class="fa fa-hospital-o">Center Info</i></a>
+                <a class="active" href="#Pediatrician Info"><i class="fa fa-user-md">Pediatrician Info</i></a>
+                <a  class="active" href="../Notification/notification.html"><i class="fa fa-bell">Notifications</i></a>
+                <a class="active" href="#Reports"><i class="fa fa-file">Reports</i></a>
+                <a class="active" href="#Profile"><i class="fa fa-user">Profile</i></a>
+            </nav>
+        </div>
+        <main>
+            <section id="vaccination-schedule">
+                <h2>Vaccination Schedule</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Vaccine</th>
+                            <th>Doses</th>
+                            <th>Recommended Date</th>
+                            <th>Vaccination Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BCG</td>
+                            <td>1</td>
+                            <td>Birth</td>
+                            <td>2022-01-01</td>
+                        </tr>
+                        <tr>
+                            <td>Pentavalent</td>
+                            <td>3</td>
+                            <td>6 Weeks</td>
+                            <td>2022-02-12</td>
+                        </tr>
+                        <tr>
+                            <td>OPV</td>
+                            <td>3</td>
+                            <td>6 Weeks</td>
+                            <td>2022-02-12</td>
+                        </tr>
+                        <tr>
+                            <td>MR</td>
+                            <td>2</td>
+                            <td>9 Months (270 Days)</td>
+                            <td>2022-10-01</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="vaccine-tracker">
+                <h2>Vaccine Tracker</h2>
+                <div class="vaccine-tracker">
+                    <div class="vaccine">
+                        <p>BCG</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="vaccine">
+                        <p>Pentavalent</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 33%"></div>
+                        </div>
+                    </div>
+                    <div class="vaccine">
+                        <p>OPV</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 33%"></div>
+                        </div>
+                    </div>
+                    <div class="vaccine">
+                        <p>MR</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 50%"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="reminders">
+                <h2>Reminders</h2>
+                <ul>
+                    <li>Next vaccination due: 2022-03-01 (Polio)</li>
+                    <li>Next vaccination due: 2022-06-01 (MMR)</li>
+                </ul>
+            </section>
+            <section id="reports">
+                <h2>Reports</h2>
+                <p>View vaccination history and reports</p>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
