@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: orangered;
+            color: #fff;
+            padding-top: 0%;
+            min-height: 60px;
+            border-bottom: #e8491d 3px solid;
+        }
+
+        header h1 {
+            text-align: left;
+            margin: 0;
+            font-size: 36px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+        }
+
+        header h1 img {
+            padding-top: 10px;
+            width: 80px;
+            height: 80px;
+            margin-right: 175px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #555;
+        }
+
+        .navbar a {
+            padding: 14px 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            text-align: center;
+        }
+
+        .navbar a:hover {
+            background-color: #bb0606;
+        }
+
+        .active {
+            background-color: orangered;
+        }
+
+        main {
+            padding: 20px;
+            background: #fff;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #31c5ac;
+        }
+
+        .notification {
+            background: #e8f4f8;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-left: 5px solid #31c5ac;
+            border-radius: 5px;
+        }
+
+        .notification p {
+            margin: 0;
+        }
+
+        .notification.missed {
+            border-left-color: #e8491d;
+            background: #fcebea;
+        }
+
+        .notification.upcoming {
+            border-left-color: #0c806c;
+            background: rgb(177, 231, 230);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1> <img src="../Image/Logo.jpg" alt="Child logo">Pediatration  Dashboard</h1>
+        </header>
+        <div class="navbar">
+            <a class="active" href="../Dashboard/dashboard.html"><i class="fa fa-home"></i> Home</a>
+            <a href="#Vaccine Schedule"><i class="fa fa-calendar"></i> Vaccination Schedule</a>
+            <a href="#Vaccine Tracker"><i class="fa fa-clock-o"></i> Vaccine Tracker</a>
+            <a href="#Center Info"><i class="fa fa-hospital-o"></i> Center Info</a>
+            <a href="#Pediatrician Info"><i class="fa fa-user-md"></i> Pediatrician Info</a>
+            <a href="./notification.html"><i class="fa fa-bell"></i> Notifications</a>
+            <a href="#Reports"><i class="fa fa-file"></i> Reports</a>
+            <a href="#Profile"><i class="fa fa-user"></i> Profile</a>
+        </div>
+
+        <main>
+            <section id="notifications">
+                <h2>Notifications</h2>
+
+                <div id="notification-area"></div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const notificationArea = document.getElementById('notification-area');
+
+            // Sample vaccination schedule (normally, this data would come from a database)
+            const vaccinationSchedule = [
+                { name: 'Hepatitis B', dueDate: '2023-01-01' },
+                { name: 'DTaP', dueDate: '2023-03-01' },
+                { name: 'MMR', dueDate: '2023-06-01' },
+                { name: 'Varicella', dueDate: '2023-07-01' },
+                { name: 'Polio', dueDate: '2024-06-20' }, 
+                { name: 'Influenza', dueDate: '2024-07-10' },
+                { name: 'Corona', dueDate: '2024-08-01' },
+                { name: 'Hiv', dueDate: '2024-09-01' } // Assuming Corona is due on 2024-08-01
+            ];
+
+            // Sample vaccination history (this would be dynamically updated in a real application)
+            const vaccinationHistory = [
+                { name: 'Hepatitis B', date: '2023-01-10' }, // Example of a late vaccination
+                { name: 'DTaP', date: '2023-02-28' } // Example of an on-time vaccination
+                // MMR not yet given (example of a missed vaccine)
+            ];
+
+            // Check for missed and upcoming vaccines
+            const missedVaccines = checkForMissedVaccines(vaccinationHistory, vaccinationSchedule);
+            const upcomingVaccines = checkForUpcomingVaccines(vaccinationHistory, vaccinationSchedule);
+
+            // Display notifications
+            displayNotifications(missedVaccines, upcomingVaccines);
+
+            function checkForMissedVaccines(history, schedule) {
+                const missedVaccines = [];
+
+                schedule.forEach(vaccine => {
+                    const dueDate = new Date(vaccine.dueDate);
+                    const vaccineGiven = history.find(h => h.name === vaccine.name);
+                    if (!vaccineGiven || new Date(vaccineGiven.date) > dueDate) {
+                        if (dueDate < new Date()) { 
+                            if (!missedVaccines.find(v => v.name === vaccine.name)) {
+                                missedVaccines.push(vaccine);
+                            }
+                        }
+                    }
+                });
+
+                return missedVaccines;
+            }
+
+            function checkForUpcomingVaccines(history, schedule) {
+                const upcomingVaccines = [];
+                const today = new Date();
+                const upcomingThreshold = new Date();
+                upcomingThreshold.setDate(today.getDate() + 120); 
+
+                schedule.forEach(vaccine => {
+                    const dueDate = new Date(vaccine.dueDate);
+                    const vaccineGiven = history.find(h => h.name === vaccine.name);
+                    if (!vaccineGiven && dueDate > today && dueDate <= upcomingThreshold) {
+                        if (!upcomingVaccines.find(v => v.name === vaccine.name)) {
+                            upcomingVaccines.push(vaccine);
+                        }
+                    }
+                });
+
+                return upcomingVaccines;
+            }
+            function displayNotifications(missedVaccines, upcomingVaccines) {
+                let notificationsHTML = '';
+
+                if (missedVaccines.length > 0) {
+                    notificationsHTML += `<p>Missed Vaccines:</p>${missedVaccines.map(v => `<div class="notification missed"><p>${v.name} was due on ${v.dueDate}</p></div>`).join('')}`;
+                }
+
+                if (upcomingVaccines.length > 0) {
+                    notificationsHTML += `<p>Upcoming Vaccines:</p>${upcomingVaccines.map(v => `<div class="notification upcoming"><p>${v.name} is due on ${v.dueDate}</p></div>`).join('')}`;
+                }
+
+                notificationArea.innerHTML = notificationsHTML;
+                notificationArea.style.display = notificationsHTML? 'block' : 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
