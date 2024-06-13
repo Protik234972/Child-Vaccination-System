@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaccine Inventory</title>
+    <link rel="stylesheet" href="governmentVaccineInventory.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Vaccine Inventory</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#vaccine-tracker">Vaccine Tracker</a></li>
+                <li><a href="#reminders">Reminders</a></li>
+                <li><a href="#reports">Reports</a></li>
+            </ul>
+        </nav>
+        <main>
+        <table id="vaccineTable">
+            <thead>
+                <tr>
+                    <th>Vaccine Name</th>
+                    <th>Price (BDT)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>COVID-19 Vaccine</td>
+                    <td class="price">25</td>
+                    <td><button class="update-btn" onclick="updatePrice(this)">Update Price</button></td>
+                </tr>
+                <tr>
+                    <td>Influenza Vaccine</td>
+                    <td class="price">15</td>
+                    <td><button class="update-btn" onclick="updatePrice(this)">Update Price</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Add New Vaccine</h2>
+        <form id="addVaccineForm" onsubmit="addVaccine(event)">
+            <label for="vaccineName">Vaccine Name:</label>
+            <input type="text" id="vaccineName" required>
+            <label for="vaccinePrice">Price (BDT):</label>
+            <input type="number" id="vaccinePrice" required>
+            <button type="submit">Add Vaccine</button>
+        </form>
+    </main>
+    </div>
+    <script src="governmentVaccineInventory.js"></script>
+</body>
+</html>
