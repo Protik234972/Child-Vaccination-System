@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaccine Information Center</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #50b3a2;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+
+        header h1 {
+            text-align: center;
+            margin: 0;
+            font-size: 36px;
+            text-transform: uppercase;
+        }
+
+        nav {
+            margin: 0;
+            padding: 0;
+            background: #333;
+        }
+
+        nav ul {
+            padding: 0;
+            list-style: none;
+            background: #333;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: inline-block;
+        }
+
+        nav ul li a:hover {
+            background: #e8491d;
+        }
+
+        main {
+            padding: 20px;
+            background: #fff;
+        }
+
+        main section {
+            margin-bottom: 20px;
+        }
+
+        section h2 {
+            font-size: 24px;
+            color: #e8491d;
+            margin-bottom: 10px;
+        }
+
+        .calendar-container {
+            margin-bottom: 20px;
+        }
+
+        table.calendar {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table.calendar th,
+        table.calendar td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+        }
+
+        table.calendar th {
+            background-color: #50b3a2;
+            color: white;
+        }
+
+        table.calendar td.marked {
+            background-color: #e8491d;
+            color: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #50b3a2;
+            color: white;
+        }
+
+        .vaccine-tracker {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .vaccine-card {
+            background: #f4f4f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            flex: 1 1 200px;
+        }
+
+        .vaccine-card h3 {
+            margin-top: 0;
+            color: #e8491d;
+        }
+
+        .vaccine-card p {
+            margin: 0;
+        }
+
+        .progress {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress-bar {
+            height: 20px;
+            background-color: #50b3a2;
+        }
+
+        .footer {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-item {
+            margin-bottom: 20px;
+        }
+
+        .footer-item h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-item a {
+            color: #e8491d;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Vaccine Information Center</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#vaccine-info">Vaccine Info</a></li>
+                <li><a href="#vaccination-timing">Vaccination Timing</a></li>
+                <li><a href="#vaccine-tracker">Vaccine Tracker</a></li>
+                <li><a href="#reminders">Reminders</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section id="vaccine-info">
+                <h2>Vaccine Info</h2>
+                <p>Manage vaccine center info, vaccination timing, and vaccine info (e.g., vaccine name, company, potential after-effects, contraindications, etc.).</p>
+            </section>
+            <section id="vaccination-timing">
+                <h2>Vaccination Timing</h2>
+                <div class="calendar-container">
+                    <h3>Vaccination Calendar - June 2024</h3>
+                    <table class="calendar">
+                        <tr>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                        <tr>
+                            <td><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Vaccination&dates=20240601/20240601">1</a></td>
+                            <td>2</td>
+                            <td class="marked"><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Vaccination&dates=20240603/20240603">3</a></td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Vaccination&dates=20240609/20240609">9</a></td>
+                            <td class="marked">10</td>
+                            <td>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>14</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Vaccination&dates=20240616/20240616">16</a></td>
+                            <td>17</td>
+                            <td>18</td>
+                            <td>19</td>
+                            <td>20</td>
+                            <td>21</td>
+                        </tr>
+                                                <tr>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>24</td>
+                            <td>25</td>
+                            <td>26</td>
+                            <td>27</td>
+                            <td>28</td>
+                        </tr>
+                        <tr>
+                            <td>29</td>
+                            <td>30</td>
+                            <td><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Vaccination&dates=20240701/20240701">1</a></td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                        </tr>
+                    </table>
+                </div>
+                <h3>Vaccination Schedule</h3>
+                <table>
+                    <tr>
+                        <th>Age</th>
+                        <th>Dose 1</th>
+                        <th>Dose 2</th>
+                    </tr>
+                    <tr>
+                        <td>1 - 2</td>
+                        <td>3</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>5 - 18</td>
+                        <td>3</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>21 - 25</td>
+                        <td>7</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>30 - 40</td>
+                        <td>7</td>
+                        <td>12</td>
+                    </tr>
+                </table>
+            </section>
+            <section id="vaccine-tracker">
+                <h2>Vaccine Tracker</h2>
+                <div class="vaccine-tracker">
+                    <div class="vaccine-card">
+                        <h3>Vaccine 1</h3>
+                        <p>Progress: 60%</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                    <div class="vaccine-card">
+                        <h3>Vaccine 2</h3>
+                        <p>Progress: 80%</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="vaccine-card">
+                        <h3>Vaccine 3</h3>
+                        <p>Progress: 40%</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 40%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="reminders">
+                <h2>Reminders</h2>
+                <ul>
+                    <li>Upcoming vaccination: June 10, 2024</li>
+                    <li>Check with your doctor if you experience any side effects.</li>
+                </ul>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer-item">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:info@vaccinecenter.com">info@vaccinecenter.com</a></p>
+                <p>Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
+            </div>
+            <div class="footer-item">
+                <h3>Location</h3>
+                <p><a href="https://maps.google.com">Find us on Google Maps</a></p>
+            </div>
+            <div class="footer-item">
+                <h3>Products</h3>
+                <p><a href="products.html">Our Products</a></p>
+            </div>
+            <div class="footer-item">
+                <h3>Blog</h3>
+                <p><a href="blog.html">Latest Updates</a></p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html> 
