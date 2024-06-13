@@ -33,3 +33,4 @@ function addVaccine(event) {
         document.getElementById("addVaccineForm").reset();
     }
 }
+
