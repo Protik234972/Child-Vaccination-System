@@ -12,6 +12,7 @@ body {
     width: 80%;
     margin: 0 auto;
     overflow: hidden;
+    background-image: url('../Image/new picture.webp');
 }
 
 header {
