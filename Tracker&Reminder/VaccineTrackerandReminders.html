@@ -20,18 +20,29 @@
         }
 
         header {
-            background: #50b3a2;
+            background: #31c5ac;
             color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
+            padding-top: 0%;
+            min-height: 60px;
             border-bottom: #e8491d 3px solid;
         }
 
         header h1 {
-            text-align: center;
+            text-align: left;
             margin: 0;
             font-size: 36px;
             text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            position: relative;
+
+        }
+
+        header h1 img {
+            padding-top: 0px;
+            width: 80px;
+            height: auto;
+            margin-right: 175px;
         }
 
         nav {
@@ -138,12 +149,14 @@
 <body>
     <div class="container">
         <header>
-            <h1>Vaccine Tracker & Reminders</h1>
+            <h1> <img src="../Image/Logo.jpg" alt="Child logo">Child Vaccination Dashboard</h1>
         </header>
         <nav>
             <ul>
-                <li><a href="#vaccine-tracker">Vaccine Tracker</a></li>
-                <li><a href="#reminders">Reminders</a></li>
+                <li><a class="active" href="../Dashboard/dashboard.html"><i class="fa fa-home"></i> Home</a></li>
+                
+                <li><a href="#reminders">Vaccine Tracker & Reminder</a></li>
+                <li><a href="../Tracker&Reminder/VaccineInformationandTiming.html">Vaccine Info</a></li>
             </ul>
         </nav>
         <main>
