@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Child Vaccination History</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,7 +36,6 @@
             display: flex;
             align-items: center;
             position: relative;
-
         }
 
         header h1 img {
@@ -73,12 +71,9 @@
             padding: 14px 16px;
             background-color: inherit;
             font-family: inherit;
-            /* Important for vertical align on mobile phones */
             margin: 0;
-            /* Important for vertical align on mobile phones */
         }
 
-        /* Dropdown content (hidden by default) */
         .dropdown-content {
             display: none;
             position: absolute;
@@ -88,7 +83,6 @@
             z-index: 1;
         }
 
-        /* Links inside the dropdown */
         .dropdown-content a {
             float: none;
             color: rgb(247, 243, 243);
@@ -98,18 +92,15 @@
             text-align: left;
         }
 
-        /* Add a grey background color to dropdown links on hover */
         .dropdown-content a:hover {
             background-color: #bb0606;
         }
 
-        /* Show the dropdown menu on hover */
         .dropdown:hover .dropdown-content {
             display: block;
             background-color: #333;
         }
 
-        /* Add a red background color to navbar links on hover */
         .dropdown:hover .dropbtn {
             background-color: red;
         }
@@ -118,53 +109,70 @@
             background-color: #31c5ac;
         }
 
+        .history-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
 
+        h2 {
+            text-align: center;
+            color: #333;
+        }
 
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
 
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
 
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
     </style>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../Notification/Nstyle.css">
 </head>
-
 <body>
     <div class="container">
         <header>
-            <h1> <img src="../Image/Logo.jpg" alt="Child logo">Child Vaccination Dashboard</h1>
+            <h1><img src="../Image/Logo.jpg" alt="Child logo">Child Vaccination Dashboard</h1>
         </header>
         <div class="navbar">
             <a class="active" href="../Dashboard/dashboard.html"><i class="fa fa-home"></i> Home</a>
-
             <div class="dropdown">
                 <button class="dropbtn"><i class="fa fa-hospital-o"></i> Vaccination Center</button>
                 <div class="dropdown-content">
                     <a href="#Center list"><i class="fa fa-list"></i> Center list</a>
                     <a href="../Vaccination list/userVaccinationList.html"><i class="fa fa-list"></i> Vaccination List</a>
-                    
                 </div>
             </div>
-
             <div class="dropdown">
-                <button class="dropbtn"><i class="fa fa-user-md"></i> Pediatrician </button>
+                <button class="dropbtn"><i class="fa fa-user-md"></i> Pediatrician</button>
                 <div class="dropdown-content">
                     <a href="#Pediatrician Profile"><i class="fa fa-user"></i> Pediatrician Profile</a>
                     <a href="#Pediatrician Schedule"><i class="fa fa-calendar"></i> Pediatrician Schedule</a>
                 </div>
             </div>
-
             <a href="../Notification/notification.html"><i class="fa fa-bell"></i> Notifications</a>
-            
             <div class="dropdown">
                 <button class="dropbtn"><i class="fa fa-file"></i> Reports</button>
                 <div class="dropdown-content">
                     <a href="../Child Vaccination History/childHistoryData.html"><i class="fa fa-history"></i> Vaccine History</a>
                     <a href="#Medical History"><i class="fa fa-info-circle"></i> Medical Conditions</a>
                 </div>
-
             </div>
-            
-
             <div class="dropdown">
                 <button class="dropbtn"><i class="fa fa-bars"></i> Menu</button>
                 <div class="dropdown-content">
@@ -174,11 +182,53 @@
                     <a href="../Child Demographic Data Form/childDemo.html"><i class="fa fa-registered"></i> Child Registration</a>
                     <a href="../Login Page/LoginPage.html"><i class="fa fa-sign-out"></i> Logout</a>
                 </div>
-
             </div>
         </div>
-
+        <div class="history-container">
+            <h2>Child Vaccination History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vaccine Name</th>
+                        <th>Date Administered</th>
+                        <th>Age</th>
+                        <th>Administered By</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hepatitis B</td>
+                        <td>2023-01-15</td>
+                        <td>0 months</td>
+                        <td>Ms.Sharmin Haque</td>
+                    </tr>
+                    <tr>
+                        <td>Rotavirus</td>
+                        <td>2023-03-10</td>
+                        <td>2 months</td>
+                        <td>Manha Islam</td>
+                    </tr>
+                    <tr>
+                        <td>DTP</td>
+                        <td>2023-05-10</td>
+                        <td>4 months</td>
+                        <td>Dr.Marjuk Hossain</td>
+                    </tr>
+                    <tr>
+                        <td>Hib</td>
+                        <td>2023-07-10</td>
+                        <td>6 months</td>
+                        <td>Mr.Rahim</td>
+                    </tr>
+                    <tr>
+                        <td>MMR</td>
+                        <td>2024-01-10</td>
+                        <td>12 months</td>
+                        <td>Rokeya</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
-
 </html>
