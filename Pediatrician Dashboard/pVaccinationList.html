@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaccine Inventory - User View</title>
+    <link rel="stylesheet" href="pVaccinationList.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1> <img src="../Image/Logo.jpg" alt="Child logo">Pediatrician Dashboard</h1>
+        </header>
+        <div class="navbar">
+            <a class="active" href="./pDashboard.html"><i class="fa fa-home"></i> Home</a>
+
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-hospital-o"></i> Vaccination Center</button>
+                <div class="dropdown-content">
+                    <a href="#Center list"><i class="fa fa-list"></i> Center list</a>
+                    <a href="./pVaccinationList.html"><i class="fa fa-list"></i> Vaccination
+                        List</a>
+
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-user-md"></i> Pediatrician </button>
+                <div class="dropdown-content">
+                    <a href="#Pediatrician Profile"><i class="fa fa-user"></i> Pediatrician Profile</a>
+                    <a href="#Pediatrician Schedule"><i class="fa fa-calendar"></i> Pediatrician Schedule</a>
+                </div>
+            </div>
+
+            <a href="../Pediatrician Notification/pNotification.html"><i class="fa fa-bell"></i> Notifications</a>
+
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-file"></i> Reports</button>
+                <div class="dropdown-content">
+                    <a href="../Child Vaccination History/childHistoryData.html"><i class="fa fa-history"></i> Vaccine
+                        History</a>
+                    <a href="#Medical History"><i class="fa fa-info-circle"></i> Medical Conditions</a>
+                </div>
+
+            </div>
+
+
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-bars"></i> Menu</button>
+                <div class="dropdown-content">
+                    <a href="#Profile"><i class="fa fa-user"></i> Profile</a>
+                    <a href="#Vaccine Schedule"><i class="fa fa-calendar"></i> Vaccination Schedule</a>
+                    <a href="../Tracker&Reminder/VaccineTrackerandReminders.html"><i class="fa fa-clock-o"></i> Vaccine
+                        Tracker</a>
+                    <a href="../Child Demographic Data Form/childDemo.html"><i class="fa fa-registered"></i> Child
+                        Registration</a>
+                    <a href="../Login Page/LoginPage.html"><i class="fa fa-sign-out"></i> Logout</a>
+                </div>
+
+            </div>
+        </div>
+        <main>
+            <h1 style="text-align: center;">Vaccine List</h1>
+            <table id="vaccineTable">
+                <thead>
+                    <tr>
+                        <th>Vaccine Name</th>
+                        <th>Price ($)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>COVID-19 Vaccine</td>
+                        <td class="price">25</td>
+                    </tr>
+                    <tr>
+                        <td>Influenza Vaccine</td>
+                        <td class="price">15</td>
+                    </tr>
+                    <!-- Additional vaccine rows can be added here -->
+                </tbody>
+            </table>
+        </main>
+    </div>
+    <script src="userVaccinationList.js"></script>
+</body>
+
+</html>
