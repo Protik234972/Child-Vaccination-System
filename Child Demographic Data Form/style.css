@@ -12,8 +12,8 @@ body {
     overflow: hidden;
     background-image: url('../Image/child-vaccination\ \(1\).jpg');
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    position: relative;
 }
 
 header {
@@ -122,7 +122,7 @@ header h1 img {
 }
 
 form {
-    background-color: #fff;
+    background-color: #ac9de7df;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(56, 58, 132, 0.1);
