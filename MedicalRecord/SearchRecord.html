@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Medical History</title>
+    <link rel="stylesheet" href="medicalRecord.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../Notification/Nstyle.css">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1> <img src="../Image/Logo.jpg" alt="Child logo">Child Vaccination Dashboard</h1>
+        </header>
+        <div class="navbar">
+            <a class="active" href="../Dashboard/dashboard.html"><i class="fa fa-home"></i> Home</a>
+
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-hospital-o"></i> Vaccination Center</button>
+                <div class="dropdown-content">
+                    <a href="#Center list"><i class="fa fa-list"></i> Center list</a>
+                    <a href="#Center Location"><i class="fa fa-map-marker"></i> Center Location </a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-user-md"></i> Pediatrician </button>
+                <div class="dropdown-content">
+                    <a href="#Pediatrician Profile"><i class="fa fa-user"></i> Pediatrician Profile</a>
+                    <a href="#Pediatrician Schedule"><i class="fa fa-calendar"></i> Pediatrician Schedule</a>
+                </div>
+            </div>
+
+            <a href="../Notification/notification.html"><i class="fa fa-bell"></i> Notifications</a>
+
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-file"></i> Reports</button>
+                <div class="dropdown-content">
+                    <a href="#Vaccine History"><i class="fa fa-history"></i> Vaccine History</a>
+                    <a href="#Medical History"><i class="fa fa-info-circle"></i> Medical Conditions</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-bars"></i> Menu</button>
+                <div class="dropdown-content">
+                    <a href="#Profile"><i class="fa fa-user"></i> Profile</a>
+                    <a href="#Vaccine Schedule"><i class="fa fa-calendar"></i> Vaccination Schedule</a>
+                    <a href="#Vaccine Tracker"><i class="fa fa-clock-o"></i> Vaccine Tracker</a>
+                    <a href="../Login Page/LoginPage.html"><i class="fa fa-sign-out"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <section class="record-list-section">
+            <h2>Patient Records</h2>
+            <button onclick="window.location.href='AddRecord.html'" class="add-record-button">Add New Medical Record</button>
+            <div id="record-list">
+                <!-- Dynamic list of records will be injected here -->
+            </div>
+        </section>
+    </main>
+    
+
+    <script src="medicalRecord.js"></script>
+</body>
+</html>

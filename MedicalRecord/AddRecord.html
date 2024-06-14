@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Child Medical Record</title>
+    <link rel="stylesheet" href="medicalRecord.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../Notification/Nstyle.css">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1> <img src="../Image/Logo.jpg" alt="Child logo">Child Vaccination Dashboard</h1>
+        </header>
+        <div class="navbar">
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-hospital-o"></i> Vaccination Center</button>
+                <div class="dropdown-content">
+                    <a href="#Center list"><i class="fa fa-list"></i> Center list</a>
+                    <a href="#Center Location"><i class="fa fa-map-marker"></i> Center Location </a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-user-md"></i> Pediatrician </button>
+                <div class="dropdown-content">
+                    <a href="#Pediatrician Profile"><i class="fa fa-user"></i> Pediatrician Profile</a>
+                    <a href="#Pediatrician Schedule"><i class="fa fa-calendar"></i> Pediatrician Schedule</a>
+                </div>
+            </div>
+
+            <a href="../Notification/notification.html"><i class="fa fa-bell"></i> Notifications</a>
+
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-file"></i> Reports</button>
+                <div class="dropdown-content">
+                    <a href="#Vaccine History"><i class="fa fa-history"></i> Vaccine History</a>
+                    <a href="#Medical History"><i class="fa fa-info-circle"></i> Medical Conditions</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-bars"></i> Menu</button>
+                <div class="dropdown-content">
+                    <a href="#Profile"><i class="fa fa-user"></i> Profile</a>
+                    <a href="#Vaccine Schedule"><i class="fa fa-calendar"></i> Vaccination Schedule</a>
+                    <a href="#Vaccine Tracker"><i class="fa fa-clock-o"></i> Vaccine Tracker</a>
+                    <a href="../Login Page/LoginPage.html"><i class="fa fa-sign-out"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <section class="form-section">
+            <form id="medical-form">
+                <div class="form-group">
+                    <label for="child-id">Child's ID:</label>
+                    <input type="text" id="child-id" name="child-id" required>
+                </div>
+                <div class="form-group">
+                    <label for="child-name">Child's Name:</label>
+                    <input type="text" id="child-name" name="child-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="text" id="age" name="age" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="vaccine-count">Number of Vaccines Taken:</label>
+                    <input type="number" id="vaccine-count" name="vaccine-count" required>
+                </div>
+                <div class="form-group">
+                    <label for="vaccine-names">Names of Vaccines Taken:</label>
+                    <textarea id="vaccine-names" name="vaccine-names" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="medical-history">Medical History:</label>
+                    <textarea id="medical-history" name="medical-history" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="allergies">Allergies:</label>
+                    <input type="text" id="allergies" name="allergies">
+                </div>
+                <div class="form-group">
+                    <label for="medications">Current Medications:</label>
+                    <input type="text" id="medications" name="medications">
+                </div>
+                <div class="form-group">
+                    <label for="doctor-name">Doctor's Name:</label>
+                    <input type="text" id="doctor-name" name="doctor-name">
+                </div>
+                <div class="form-group">
+                    <label for="doctor-contact">Doctor's Contact:</label>
+                    <input type="tel" id="doctor-contact" name="doctor-contact">
+                </div>
+                <button type="submit">Add Record</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="footer">
+
+            <p>Contact us:</p>
+
+            <p>Email: <a href="mailto:example@example.com">example@example.com</a></p>
+
+            <p>Phone: <a href="tel:+1234567890">+1234567890</a></p>
+
+        </div>
+    </footer>
+
+    <script src="medicalRecord.js"></script>
+</body>
+</html>
