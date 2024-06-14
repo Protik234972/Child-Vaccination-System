@@ -2,8 +2,9 @@
 <html>
 
 <head>
+    <title>Child Vaccination Dashboard</title>
     <style>
-         body {
+        body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
             margin: 0;
@@ -32,6 +33,7 @@
             text-transform: uppercase;
             display: flex;
             align-items: center;
+            position: relative;
         }
 
         header h1 img {
@@ -59,20 +61,57 @@
             background-color: #bb0606;
         }
 
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: rgb(247, 243, 243);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: orange;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            background-color: #333;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: orange;
+        }
+
         .active {
             background-color: orangered;
         }
 
-        main {
-            padding: 20px;
-            background: #fff;
-            margin-top: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        h2 {
-            color: #31c5ac;
+        @media screen and (max-width: 500px) {
+            .navbar a {
+                float: none;
+                display: block;
+            }
         }
 
         .notification {
@@ -103,19 +142,41 @@
 <body>
     <div class="container">
         <header>
-            <h1> <img src="../Image/Logo.jpg" alt="Child logo">Pediatration  Dashboard</h1>
+            <h1> <img src="../Image/Logo.jpg" alt="Child logo">Pediatrician Dashboard</h1>
         </header>
         <div class="navbar">
-            <a class="active" href="#Home"><i class="fa fa-home"></i> Home</a>
-            <a href="#Vaccine Schedule"><i class="fa fa-calendar"></i> Vaccination Schedule</a>
-            <a href="#Vaccine Tracker"><i class="fa fa-clock-o"></i> Vaccine Tracker</a>
-            <a href="#Center Info"><i class="fa fa-hospital-o"></i> Center Info</a>
-            <a href="#Pediatrician Info"><i class="fa fa-user-md"></i> Pediatrician Info</a>
-            <a href="#notification"><i class="fa fa-bell"></i> Notifications</a>
-            <a href="#Reports"><i class="fa fa-file"></i> Reports</a>
-            <a href="#Profile"><i class="fa fa-user"></i> Profile</a>
-        </div>
+            <a class="active" href="../Pediatrician Dashboard/pDashboard.html"><i class="fa fa-home"></i> Home</a>
 
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-hospital-o"></i> Vaccination Center</button>
+                <div class="dropdown-content">
+                    <a href="#Center list"><i class="fa fa-list"></i> Center list</a>
+                    <a href="../Pediatrician Dashboard/pVaccinationList.html"><i class="fa fa-list"></i> Vaccination List</a>
+                </div>
+            </div>
+
+            <a href="../Pediatrician Notification/pNotification.html"><i class="fa fa-bell"></i> Notifications</a>
+<!--  
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-file"></i> Reports</button>
+                <div class="dropdown-content">
+                    <a href="../Child Vaccination History/childHistoryData.html"><i class="fa fa-history"></i> Vaccine History</a>
+                    <a href="#Medical History"><i class="fa fa-info-circle"></i> Medical Conditions</a>
+                </div>
+            </div>
+ -->
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-bars"></i> Menu</button>
+                <div class="dropdown-content">
+                    <a href="#Profile"><i class="fa fa-user"></i> Profile</a>
+                    <a href="../Pediatrician Dashboard/pVaccinationSchedule.html"><i class="fa fa-calendar"></i> Vaccination Schedule</a>
+                    <a href="../Login Page/LoginPage.html"><i class="fa fa-sign-out"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
         <main>
             <section id="notifications">
                 <h2>Notifications</h2>
@@ -135,7 +196,7 @@
                 { name: 'DTaP', dueDate: '2023-03-01' },
                 { name: 'MMR', dueDate: '2023-06-01' },
                 { name: 'Varicella', dueDate: '2023-07-01' },
-                { name: 'Polio', dueDate: '2024-06-20' }, 
+                { name: 'Polio', dueDate: '2024-06-20' },
                 { name: 'Influenza', dueDate: '2024-07-10' },
                 { name: 'Corona', dueDate: '2024-08-01' },
                 { name: 'Hiv', dueDate: '2024-09-01' } // Assuming Corona is due on 2024-08-01
@@ -162,7 +223,7 @@
                     const dueDate = new Date(vaccine.dueDate);
                     const vaccineGiven = history.find(h => h.name === vaccine.name);
                     if (!vaccineGiven || new Date(vaccineGiven.date) > dueDate) {
-                        if (dueDate < new Date()) { 
+                        if (dueDate < new Date()) {
                             if (!missedVaccines.find(v => v.name === vaccine.name)) {
                                 missedVaccines.push(vaccine);
                             }
@@ -177,7 +238,7 @@
                 const upcomingVaccines = [];
                 const today = new Date();
                 const upcomingThreshold = new Date();
-                upcomingThreshold.setDate(today.getDate() + 120); 
+                upcomingThreshold.setDate(today.getDate() + 120);
 
                 schedule.forEach(vaccine => {
                     const dueDate = new Date(vaccine.dueDate);
@@ -191,6 +252,7 @@
 
                 return upcomingVaccines;
             }
+
             function displayNotifications(missedVaccines, upcomingVaccines) {
                 let notificationsHTML = '';
 
@@ -203,10 +265,11 @@
                 }
 
                 notificationArea.innerHTML = notificationsHTML;
-                notificationArea.style.display = notificationsHTML? 'block' : 'none';
+                notificationArea.style.display = notificationsHTML ? 'block' : 'none';
             }
         });
     </script>
 </body>
 
 </html>
+

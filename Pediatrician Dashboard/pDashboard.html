@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Child Vaccination Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: orangered;
+            color: #fff;
+            padding-top: 0%;
+            min-height: 60px;
+            border-bottom: #e8491d 3px solid;
+        }
+
+        header h1 {
+            text-align: left;
+            margin: 0;
+            font-size: 36px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            position: relative;
+
+        }
+
+        header h1 img {
+            padding-top: 0px;
+            width: 80px;
+            height: auto;
+            margin-right: 175px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #555;
+        }
+
+        .navbar a {
+            padding: 14px 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            text-align: center;
+        }
+
+        .navbar a:hover {
+            background-color: #bb0606;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            /* Important for vertical align on mobile phones */
+            margin: 0;
+            /* Important for vertical align on mobile phones */
+        }
+
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            float: none;
+            color: rgb(247, 243, 243);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        /* Add a grey background color to dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: orange;
+        }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+            background-color: #333;
+        }
+
+        /* Add a red background color to navbar links on hover */
+        .dropdown:hover .dropbtn {
+            background-color: orange;
+        }
+
+        .active {
+            background-color: orangered;
+        }
+
+        @media screen and (max-width: 500px) {
+            .navbar a {
+                float: none;
+                display: block;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1> <img src="../Image/Logo.jpg" alt="Child logo">Pediatrician Dashboard</h1>
+        </header>
+        <div class="navbar">
+            <a class="active" href="./pDashboard.html"><i class="fa fa-home"></i> Home</a>
+
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-hospital-o"></i> Vaccination Center</button>
+                <div class="dropdown-content">
+                    <a href="#Center list"><i class="fa fa-list"></i> Center list</a>
+                    <a href="./pVaccinationList.html"><i class="fa fa-list"></i> Vaccination List</a>
+                </div>
+            </div>
+
+            
+
+            <a href="../Pediatrician Notification/pNotification.html"><i class="fa fa-bell"></i> Notifications</a>
+ <!--  
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-file"></i> Reports</button>
+                <div class="dropdown-content">
+                    <a href="../Child Vaccination History/childHistoryData.html"><i class="fa fa-history"></i> Vaccine History</a>
+                    <a href="#Medical History"><i class="fa fa-info-circle"></i> Medical Conditions</a>
+                </div>
+            </div>
+         -->
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-bars"></i> Menu</button>
+                <div class="dropdown-content">
+                    <a href="#Profile"><i class="fa fa-user"></i> Profile</a>
+                    <a href="./pVaccinationSchedule.html"><i class="fa fa-calendar"></i> Vaccination Schedule</a>
+                    <a href="../Login Page/LoginPage.html"><i class="fa fa-sign-out"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
