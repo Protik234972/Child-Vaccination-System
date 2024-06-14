@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('records', JSON.stringify(records));
             alert('Medical record added successfully');
             medicalForm.reset();
+            window.location.href = 'SearchRecord.html';
         });
     }
 
