@@ -1,4 +1,4 @@
-/* medicalReord.css */
+
 
 body {
     font-family: Arial, sans-serif;
@@ -72,6 +72,7 @@ header h1 img {
     padding: 14px 16px;
     background-color: inherit;
     font-family: inherit;
+    /* Important for vertical align on mobile phones */
     margin: 0;
 }
 
@@ -117,6 +118,29 @@ main {
     padding: 2rem;
 }
 
+form {
+    background-color: #dee495df;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(56, 58, 132, 0.1);
+    max-width: 600px;
+    margin: auto;
+}
+
+#form-pading{
+    margin-top: 2px;
+}
+.form-header {
+    margin-top: 1px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-header h1 {
+    margin: 0;
+}
+
+
 .form-section, .record-list-section {
     background-color: white;
     border-radius: 8px;
@@ -128,7 +152,13 @@ main {
 }
 
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 label {

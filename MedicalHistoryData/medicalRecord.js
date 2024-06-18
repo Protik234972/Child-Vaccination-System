@@ -1,4 +1,4 @@
-// medicalRecord.js
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const medicalForm = document.getElementById('medical-form');
