@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Child Vaccination Dashboard</title>
+    <title>Child Vaccination Form</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="addVaccinationHistory.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1><img src="path_to_your_logo_image.jpg" alt="Child logo">Child Vaccination Dashboard</h1>
+            <h1><img src="../Image/Logo.jpg" alt="Child logo">Child Vaccination Dashboard</h1>
         </header>
         <div class="navbar">
             <a class="active" href="#"><i class="fa fa-home"></i> Home</a>
@@ -33,7 +33,7 @@
                 <button class="dropbtn"><i class="fa fa-file"></i> Reports</button>
                 <div class="dropdown-content">
                     <a href="#"><i class="fa fa-history"></i> Vaccine History</a>
-                    <a href="#"><i class="fa fa-info-circle"></i> Medical Record</a>
+                    <a href="#"><i class="fa fa-info-circle"></i> Medical Conditions</a>
                 </div>
             </div>
             <div class="dropdown">
@@ -48,31 +48,54 @@
             </div>
         </div>
 
-        <!-- Add Vaccination Data UI -->
+        <!-- Child Vaccination Form UI -->
         <div class="form-container">
-            <h2>Add Vaccination Data</h2>
-            <form id="add-vaccine-form">
-                <label for="vaccine-name">Vaccine Name:</label>
-                <input type="text" id="vaccine-name" name="vaccine-name" required>
+            <h2>Child Vaccination Form</h2>
+            <form id="child-vaccine-form">
+                <div class="form-group">
+                    <label for="child-name">Child's Name</label>
+                    <input type="text" id="child-name" name="child-name" required>
+                </div>
 
-                <label for="date-administered">Date Administered:</label>
-                <input type="date" id="date-administered" name="date-administered" required>
+                <div class="form-group">
+                    <label for="child-dob">Date of Birth</label>
+                    <input type="date" id="child-dob" name="child-dob" required>
+                </div>
 
-                <label for="age">Age:</label>
-                <input type="text" id="age" name="age" required>
+                <div class="form-group">
+                    <label for="parent-name">Parent's Name</label>
+                    <input type="text" id="parent-name" name="parent-name" required>
+                </div>
 
-                <label for="administered-by">Administered By:</label>
-                <input type="text" id="administered-by" name="administered-by" required>
+                <div class="form-group">
+                    <label for="parent-contact">Parent's Contact</label>
+                    <input type="tel" id="parent-contact" name="parent-contact" required>
+                </div>
 
-                <button  onclick="window.location.href='childHistoryData.html'" type="submit">Add Vaccination</button>
+                <div class="form-group">
+                    <label for="vaccine-name">Vaccine Name</label>
+                    <input type="text" id="vaccine-name" name="vaccine-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date-administered">Date Administered</label>
+                    <input type="date" id="date-administered" name="date-administered" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="administered-by">Administered By</label>
+                    <input type="text" id="administered-by" name="administered-by" required>
+                </div>
+
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
 
     <script>
-        document.getElementById('add-vaccine-form').addEventListener('submit', function(event) {
+        document.getElementById('child-vaccine-form').addEventListener('submit', function(event) {
             event.preventDefault();
-            alert('Vaccination data has been added!');
+            alert('Vaccination data has been submitted!');
         });
     </script>
 </body>

@@ -5,144 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Child Vaccination History</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-
-        header {
-            background: #31c5ac;
-            color: #fff;
-            padding-top: 0%;
-            min-height: 60px;
-            border-bottom: #e8491d 3px solid;
-        }
-
-        header h1 {
-            text-align: left;
-            margin: 0;
-            font-size: 36px;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-
-        header h1 img {
-            padding-top: 10px;
-            width: 80px;
-            height: 80px;
-            margin-right: 175px;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-around;
-            background-color: #555;
-        }
-
-        .navbar a {
-            padding: 14px 20px;
-            color: white;
-            text-decoration: none;
-            font-size: 17px;
-            text-align: center;
-        }
-
-        .navbar a:hover {
-            background-color: #bb0606;
-        }
-
-        .dropdown .dropbtn {
-            font-size: 16px;
-            border: none;
-            outline: none;
-            color: white;
-            padding: 14px 16px;
-            background-color: inherit;
-            font-family: inherit;
-            margin: 0;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            float: none;
-            color: rgb(247, 243, 243);
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #bb0606;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-            background-color: #333;
-        }
-
-        .dropdown:hover .dropbtn {
-            background-color: red;
-        }
-
-        .active {
-            background-color: #31c5ac;
-        }
-
-        .history-container {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-
-        h2 {
-            text-align: center;
-            color: #333;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #f2f2f2;
-            color: #333;
-        }
-
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-    </style>
+    <link rel="stylesheet" href="childHistoryData.css">
 </head>
 <body>
     <div class="container">
@@ -193,6 +56,10 @@
                         <th>Date Administered</th>
                         <th>Age</th>
                         <th>Administered By</th>
+                        <th>Dose</th>
+                        <th>Next Due Date</th>
+                        <th>Notes</th>
+                        <th>Missed Doses/Vaccines</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -201,30 +68,50 @@
                         <td>2023-01-15</td>
                         <td>0 months</td>
                         <td>Ms.Sharmin Haque</td>
+                        <td>1st</td>
+                        <td>2023-02-15</td>
+                        <td>No adverse reactions</td>
+                        <td>None</td>
                     </tr>
                     <tr>
                         <td>Rotavirus</td>
                         <td>2023-03-10</td>
                         <td>2 months</td>
                         <td>Manha Islam</td>
+                        <td>1st</td>
+                        <td>2023-05-10</td>
+                        <td>Slight fever</td>
+                        <td>None</td>
                     </tr>
                     <tr>
                         <td>DTP</td>
                         <td>2023-05-10</td>
                         <td>4 months</td>
                         <td>Dr.Marjuk Hossain</td>
+                        <td>1st</td>
+                        <td>2023-07-10</td>
+                        <td>No adverse reactions</td>
+                        <td>None</td>
                     </tr>
                     <tr>
                         <td>Hib</td>
                         <td>2023-07-10</td>
                         <td>6 months</td>
                         <td>Mr.Rahim</td>
+                        <td>1st</td>
+                        <td>2023-09-10</td>
+                        <td>No adverse reactions</td>
+                        <td>None</td>
                     </tr>
                     <tr>
                         <td>MMR</td>
                         <td>2024-01-10</td>
                         <td>12 months</td>
                         <td>Rokeya</td>
+                        <td>1st</td>
+                        <td>2024-03-10</td>
+                        <td>Slight rash</td>
+                        <td>None</td>
                     </tr>
                 </tbody>
             </table>
