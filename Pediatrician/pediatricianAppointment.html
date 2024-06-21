@@ -2,9 +2,8 @@
 <html>
 
 <head>
-    <title>Child Vaccination Dashboard</title>
+    <title>Pediatrician Dashboard</title>
     <style>
-              
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
@@ -149,7 +148,6 @@
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 
 <body>
@@ -164,49 +162,48 @@
             <a href="../Pediatrician/pediatricianVaccineList.html"><i class="fa fa-list"></i> Vaccination List</a>
             <a href="../Pediatrician Notification/pNotification.html"><i class="fa fa-bell"></i> Notifications</a>
             <a href="../Login Page/LoginPage.html"><i class="fa fa-user">Log Out</i></a>
-            </div>
-            <main>
-                <section id="vaccine-centers">
-                    <h2>Vaccine Centers</h2>
-                    <table>
-                        <tr>
-                            <th>Name</th>
-                            <th>Address</th>
-                            <th>Capacity</th>
-                            <th>Contact Number</th>
-                        </tr>
-                        <tr>
-                            <td>Dhaka Medical College</td>
-                            <td>Dhaka, Bangladesh</td>
-                            <td>1000</td>
-                            <td>+880 2-9661900</td>
-                        </tr>
-                        <tr>
-                            <td>Chittagong General Hospital</td>
-                            <td>Chittagong, Bangladesh</td>
-                            <td>800</td>
-                            <td>+880 31-619600</td>
-                        </tr>
-                        <tr>
-                            <td>Sylhet MAG Osmani Medical College</td>
-                            <td>Sylhet, Bangladesh</td>
-                            <td>600</td>
-                            <td>+880 821-713667</td>
-                        </tr>
-                        <tr>
-                            <td>Rajshahi Medical College</td>
-                            <td>Rajshahi, Bangladesh</td>
-                            <td>700</td>
-                            <td>+880 721-772150</td>
-                        </tr>
-                    </table>
-                </section>
-                <h2>Past Vaccinattion Trends</h2>
-                <section>
-                    <img src="../Image/1.png" alt="Vaccination Trends" height="400px">
-                </section>
-            </main>
         </div>
+        <main>
+            <section id="appointments">
+                <h2>Upcoming Appointments</h2>
+                <table>
+                    <tr>
+                        <th>Guardian Name</th>
+                        <th>Child Name</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Vaccine</th>
+                        <th>Notes</th>
+                    </tr>
+                    <tr>
+                        <td>Mostafizur Rahman</td>
+                        <td>Anika Rahman</td>
+                        <td>2024-06-22</td>
+                        <td>10:00 AM</td>
+                        <td>MMR</td>
+                        <td>First dose</td>
+                    </tr>
+                    <tr>
+                        <td>Nasrin Rahman</td>
+                        <td>Zara Rahman</td>
+                        <td>2024-06-23</td>
+                        <td>11:00 AM</td>
+                        <td>Hepatitis B</td>
+                        <td>Second dose</td>
+                    </tr>
+                    <tr>
+                        <td>Munmun</td>
+                        <td>Chisty Rahman</td>
+                        <td>2024-06-24</td>
+                        <td>02:00 PM</td>
+                        <td>Polio</td>
+                        <td>Third dose</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </table>
+            </section>
+        </main>
+    </div>
 </body>
 
 </html>
