@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Child Vaccination Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #31c5ac;
+            color: #fff;
+            padding-top: 0%;
+            min-height: 60px;
+            border-bottom: #e8491d 3px solid;
+        }
+
+        header h1 {
+            text-align: left;
+            margin: 0;
+            font-size: 36px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+        }
+
+        header h1 img {
+            padding-top: 10px;
+            width: 80px;
+            height: 80px;
+            margin-right: 175px;
+        }
+
+        .navbar {
+            display: flex;
+            background-color: #555;
+            justify-content: space-around;
+            overflow: auto;
+        }
+
+        .navbar a {
+            float: left;
+            padding: 12px;
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navbar a:hover {
+            background-color: #bb0606;
+        }
+
+        .active {
+            background-color: #555;
+        }
+
+        @media screen and (max-width: 500px) {
+            .navbar a {
+                float: none;
+                display: block;
+            }
+        }
+
+        .notification {
+            background: #e8f4f8;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-left: 5px solid #31c5ac;
+            border-radius: 5px;
+        }
+
+        .notification p {
+            margin: 0;
+        }
+
+        .notification.request {
+            border-left-color: #e8491d;
+            background: #fcebea;
+        }
+
+        .notification.dispatch {
+            border-left-color: #0c806c;
+            background: rgb(177, 231, 230);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1> <img src="../Image/Logo.jpg" alt="Child logo">Government Notifications</h1>
+        </header>
+        <div class="navbar">
+            <nav>
+                <a class="active" href="governmentDashboard.html"><i class="fa fa-home">Home</i></a>
+                <a class="active" href="governmentVaccineInventory.html"><i class="fa fa-calendar">Vaccine Inventory</i></a>
+                <a class="active" href="governmentNotification.html"><i class="fa fa-bell">Notifications</i></a>
+                <a class="active" href="../Login Page/LoginPage.html"><i class="fa fa-user">Log Out</i></a>
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <main>
+            <section id="notifications">
+                <h2>Notifications</h2>
+
+                <div id="notification-area"></div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const notificationArea = document.getElementById('notification-area');
+
+            // Sample requests from vaccine centers (normally, this data would come from a database)
+            const vaccineRequests = [
+                { center: 'Dhaka Medical College', vaccine: 'Hepatitis B', requestDate: '2024-06-15' },
+                { center: 'Chittagong General Hospital', vaccine: 'DTaP', requestDate: '2024-06-16' },
+                { center: 'Rajshahi Medical College', vaccine: 'MMR', requestDate: '2024-06-17' }
+            ];
+
+            // Sample scheduled dispatches (normally, this data would come from a database)
+            const scheduledDispatches = [
+                { center: 'Dhaka Medical College', vaccine: 'Polio', dispatchDate: '2024-06-20' },
+                { center: 'Chittagong General Hospital', vaccine: 'Influenza', dispatchDate: '2024-07-10' },
+                { center: 'Rajshahi Medical College', vaccine: 'Corona', dispatchDate: '2024-08-01' }
+            ];
+
+            // Display notifications
+            displayNotifications(vaccineRequests, scheduledDispatches);
+
+            function displayNotifications(requests, dispatches) {
+                let notificationsHTML = '';
+
+                if (requests.length > 0) {
+                    notificationsHTML += `<p>Vaccine Requests:</p>${requests.map(r => `<div class="notification request"><p>${r.vaccine} requested by ${r.center} on ${r.requestDate}</p></div>`).join('')}`;
+                }
+
+                if (dispatches.length > 0) {
+                    notificationsHTML += `<p>Scheduled Dispatches:</p>${dispatches.map(d => `<div class="notification dispatch"><p>${d.vaccine} scheduled for dispatch to ${d.center} on ${d.dispatchDate}</p></div>`).join('')}`;
+                }
+
+                notificationArea.innerHTML = notificationsHTML;
+                notificationArea.style.display = notificationsHTML ? 'block' : 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
