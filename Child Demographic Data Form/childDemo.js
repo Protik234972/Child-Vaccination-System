@@ -1,6 +1,6 @@
 document.getElementById('form-pading').addEventListener('submit', function(event) {
     event.preventDefault();
-
+    const childBri = document.getElementById('child-bri').value;
     const childName = document.getElementById('child-name').value;
     const gender = document.querySelector('input[name="gender"]:checked').value;
     const dob = document.getElementById('date-of-birth').value;
@@ -8,15 +8,18 @@ document.getElementById('form-pading').addEventListener('submit', function(event
     const address = document.getElementById('address').value;
     const email = document.getElementById('email').value;
     const mobile = document.getElementById('mobile-no').value;
+    const emergencyMobile = document.getElementById('emergency-mobile-no').value;
 
     const childData = {
+        childBri,
         childName,
         gender,
         dob,
         motherName,
         address,
         email,
-        mobile
+        mobile,
+        emergencyMobile
     };
 
     // Retrieve the existing data from localStorage
