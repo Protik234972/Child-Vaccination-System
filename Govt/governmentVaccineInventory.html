@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vaccine Inventory</title>
     <style>
-        
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
@@ -68,44 +68,52 @@ header {
     border-bottom: #e8491d 3px solid;
 }
 
-header h1 {
-    text-align: left;
-    margin: 0;
-    font-size: 36px;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-}
+header {
+            background: #31c5ac;
+            color: #fff;
+            padding-top: 0%;
+            min-height: 60px;
+            border-bottom: #e8491d 3px solid;
+        }
 
-header h1 img {
-    padding-top: 10px;
-    width: 80px;
-    height: 80px;
-    margin-right: 175px;
-}
+        header h1 {
+            text-align: left;
+            margin: 0;
+            font-size: 36px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+        }
 
-.navbar {
-    display: flex;
-    background-color: #555;
-    justify-content: space-around;
-    overflow: auto;
-}
+        header h1 img {
+            padding-top: 10px;
+            width: 80px;
+            height: 80px;
+            margin-right: 175px;
+        }
 
-.navbar a {
-    float: left;
-    padding: 12px;
-    color: white;
-    text-decoration: none;
-    font-size: 17px;
-}
+        .navbar {
+            display: flex;
+            background-color: #555;
+            justify-content: space-around;
+            overflow: auto;
+        }
 
-.navbar a:hover {
-    background-color: #bb0606;
-}
+        .navbar a {
+            float: left;
+            padding: 12px;
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+        }
 
-.active {
-    background-color: #555;
-}
+        .navbar a:hover {
+            background-color: #bb0606;
+        }
+
+        .active {
+            background-color: #555;
+        }
 
 @media screen and (max-width: 500px) {
     .navbar a {
@@ -195,13 +203,13 @@ button[type="submit"]:hover {
 <body>
     <div class="container">
         <header>
-            <h1> <img src="../Image/Logo.jpg" alt="Child logo">Child Vaccination Dashboard</h1>
+            <h1> <img src="../Image/Logo.jpg" alt="Child logo">Government Vaccine Inventory</h1>
         </header>
         <div class="navbar">
             <nav>
                 <a class="active" href="governmentDashboard.html"><i class="fa fa-home">Home</i></a>
                 <a class="active" href="governmentVaccineInventory.html"><i class="fa fa-calendar">Vaccine Inventory</i></a>
-                <a  class="active" href="governmentNotification.html"><i class="fa fa-bell">Notifications</i></a>
+                <a  class="active" href="#"><i class="fa fa-bell">Notifications</i></a>
                 <a class="active" href="../Login Page/LoginPage.html"><i class="fa fa-user">Log Out</i></a>
             </nav>
         </div>
