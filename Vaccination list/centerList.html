@@ -154,51 +154,9 @@
             color: white;
         }
 
-        .vaccine-tracker {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .vaccine {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .progress {
-            width: 80%;
-            background-color: #ddd;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .progress-bar {
-            height: 20px;
-            background-color: #50b3a2;
-        }
-
-        #reminders ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        #reminders li {
-            background: #f4f4f9;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-left: 10px solid #e8491d;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-
-        #reminders h2 {
-            color: #ed3608;
-        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
-
 <body>
     <div class="container">
         <header>
@@ -206,16 +164,13 @@
         </header>
         <div class="navbar">
             <a class="active" href="../Dashboard/dashboard.html"><i class="fa fa-home"></i> Home</a>
-
             <div class="dropdown">
                 <button class="dropbtn"><i class="fa fa-hospital-o"></i> Vaccination Center</button>
                 <div class="dropdown-content">
                     <a href="../Vaccination list/centerList.html"><i class="fa fa-list"></i> Center list</a>
                     <a href="../Vaccination list/userVaccinationList.html"><i class="fa fa-list"></i> Vaccination List</a>
-                    
                 </div>
             </div>
-
             <div class="dropdown">
                 <button class="dropbtn"><i class="fa fa-user-md"></i> Pediatrician </button>
                 <div class="dropdown-content">
@@ -223,19 +178,14 @@
                     <a href="#Pediatrician Schedule"><i class="fa fa-calendar"></i> Pediatrician Schedule</a>
                 </div>
             </div>
-
             <a href="../Notification/notification.html"><i class="fa fa-bell"></i> Notifications</a>
-            
             <div class="dropdown">
                 <button class="dropbtn"><i class="fa fa-file"></i> Reports</button>
                 <div class="dropdown-content">
                     <a href="../Child Vaccination History/childHistoryData.html"><i class="fa fa-history"></i> Vaccine History</a>
                     <a href="../MedicalHistoryData/SearchRecord.html"><i class="fa fa-info-circle"></i> Medical Record</a>
                 </div>
-
             </div>
-            
-
             <div class="dropdown">
                 <button class="dropbtn"><i class="fa fa-bars"></i> Menu</button>
                 <div class="dropdown-content">
@@ -245,88 +195,43 @@
                     <a href="../Child Demographic Data Form/childDemo.html"><i class="fa fa-registered"></i> Child Registration</a>
                     <a href="../Login Page/LoginPage.html"><i class="fa fa-sign-out"></i> Logout</a>
                 </div>
-
             </div>
         </div>
         <main>
-            <section id="vaccination-schedule">
-                <h2>Vaccination Schedule</h2>
+            <section id="vaccine-centers">
+                <h2>Vaccine Centers</h2>
                 <table>
-                    <thead>
-                        <tr>
-                            <th>Vaccine</th>
-                            <th>Doses</th>
-                            <th>Recommended Date</th>
-                            <th>Vaccination Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>BCG</td>
-                            <td>1</td>
-                            <td>Birth</td>
-                            <td>2022-01-01</td>
-                        </tr>
-                        <tr>
-                            <td>Pentavalent</td>
-                            <td>3</td>
-                            <td>6 Weeks</td>
-                            <td>2022-02-12</td>
-                        </tr>
-                        <tr>
-                            <td>OPV</td>
-                            <td>3</td>
-                            <td>6 Weeks</td>
-                            <td>2022-02-12</td>
-                        </tr>
-                        <tr>
-                            <td>MR</td>
-                            <td>2</td>
-                            <td>9 Months (270 Days)</td>
-                            <td>2022-10-01</td>
-                        </tr>
-                    </tbody>
+                    <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Capacity</th>
+                        <th>Contact Number</th>
+                    </tr>
+                    <tr>
+                        <td>Dhaka Medical College</td>
+                        <td>Dhaka, Bangladesh</td>
+                        <td>1000</td>
+                        <td>+880 2-9661900</td>
+                    </tr>
+                    <tr>
+                        <td>Chittagong General Hospital</td>
+                        <td>Chittagong, Bangladesh</td>
+                        <td>800</td>
+                        <td>+880 31-619600</td>
+                    </tr>
+                    <tr>
+                        <td>Sylhet MAG Osmani Medical College</td>
+                        <td>Sylhet, Bangladesh</td>
+                        <td>600</td>
+                        <td>+880 821-713667</td>
+                    </tr>
+                    <tr>
+                        <td>Rajshahi Medical College</td>
+                        <td>Rajshahi, Bangladesh</td>
+                        <td>700</td>
+                        <td>+880 721-772150</td>
+                    </tr>
                 </table>
-            </section>
-            <section id="vaccine-tracker">
-                <h2>Vaccine Tracker</h2>
-                <div class="vaccine-tracker">
-                    <div class="vaccine">
-                        <p>BCG</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 100%"></div>
-                        </div>
-                    </div>
-                    <div class="vaccine">
-                        <p>Pentavalent</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 33%"></div>
-                        </div>
-                    </div>
-                    <div class="vaccine">
-                        <p>OPV</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 33%"></div>
-                        </div>
-                    </div>
-                    <div class="vaccine">
-                        <p>MR</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 50%"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="reminders">
-                <h2>Reminders</h2>
-                <ul>
-                    <li>Next vaccination due: 2022-03-01 (Polio)</li>
-                    <li>Next vaccination due: 2022-06-01 (MMR)</li>
-                </ul>
-            </section>
-            <section id="reports">
-                <h2>Reports</h2>
-                <p>View vaccination history and reports</p>
             </section>
         </main>
     </div>

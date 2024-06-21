@@ -34,7 +34,6 @@
                         <option value="pediatrician">Pediatrician</option>
                         <option value="government">Government Agency</option>
                         <option value="guardian">Child/Guardian</option>
-                        <option value="vaccineGiver">Vaccine Giver</option>
                     </select>
                 </div>
 
@@ -76,8 +75,6 @@
             window.location.href = "../Govt/governmentDashboard.html"; // Change to the government dashboard URL
         } else if (selectedRole === "guardian") {
             window.location.href = "../Dashboard/dashboard.html"; // Change to the guardian dashboard URL
-        } else if (selectedRole === "vaccineGiver") {
-            window.location.href = "#"; // Change to the vaccine giver dashboard URL
         } else {
             alert("Please select a role to log in.");
         }
