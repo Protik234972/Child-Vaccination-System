@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Child Demographic Data Form</title>
+    <title>Child Demographic Reports</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="childDemo.css">
+    <link rel="stylesheet" href="showChildDemo.css">
 </head>
 <body>
     <div class="container">
@@ -47,8 +47,8 @@
             <div class="dropdown">
                 <button class="dropbtn"><i class="fa fa-bars"></i> Menu</button>
                 <div class="dropdown-content">
-                    <a href="./showChildDemo.html"><i class="fa fa-user"></i> Profile</a>
-                    <a href="#Vaccine Schedule"><i class="fa fa-calendar"></i> Vaccination Schedule</a>
+                    <a href="#Profile"><i class="fa fa-user"></i> Profile</a>
+                    <a href="../Tracker&Reminder/VaccineInformationandTiming.html"><i class="fa fa-calendar"></i> Vaccination Schedule</a>
                     <a href="../Tracker&Reminder/VaccineTrackerandReminders.html"><i class="fa fa-clock-o"></i> Vaccine Tracker</a>
                     <a href="../Child Demographic Data Form/childDemo.html"><i class="fa fa-registered"></i> Child Registration</a>
                     <a href="../Login Page/LoginPage.html"><i class="fa fa-sign-out"></i> Logout</a>
@@ -56,55 +56,27 @@
 
             </div>
         </div>
-        <div class="background">
-        <form id="form-pading">
-            <div class="form-header">
-                <h1>Child Registration Form</h1>
-                <p>Please fill out this form with the required information</p>
-            </div>
-    
-            <fieldset>
-                <div class="form-group">
-                    <label for="child-name">Child Name:</label>
-                    <input type="text" id="child-name" name="child-name" placeholder="Child Name">
-                </div>
-                <div class="form-group">
-                    <label>Gender:</label>
-                    <div class="form-gender">
-                    <input type="radio" id="male" name="gender" value="male">
-                    <label for="male">Male</label>
-                    <input type="radio" id="female" name="gender" value="female">
-                    <label for="female">Female</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="mother-name">Mother's Name:</label>
-                    <input type="text" id="mother-name" name="mother-name" placeholder="Mother's Name">
-                </div>
-                <div class="form-group">
-                    <label for="date-of-birth">Date Of Birth:</label>
-                    <input type="date" id="date-of-birth" name="date-of-birth" placeholder="Date of Birth">
-                </div>
-                <div class="form-group">
-                    <label for="address">Address:</label>
-                    <textarea id="address" name="address" rows="4" cols="30" placeholder="Address"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="abc@gmail.com">
-                </div>
-                <div class="form-group">
-                    <label for="mobile-no">Mobile No.:</label>
-                    <input type="tel" id="mobile-no" name="mobile-no" placeholder="01XXXXXXXXX">
-                </div>
-            </fieldset>
-            <div class="form-group">
-                <input type="submit" value="Submit">
-            </div>
-        </form>
-    </div> 
+        <div class="history-container">
+            <h2>Child Demographic Data</h2>
+            <table id="childTable">
+                <thead>
+                    <tr>
+                        <th>Child Name</th>
+                        <th>Gender  </th>
+                        <th>Date Of Birth</th>
+                        <th>Mother Name</th>
+                        <th>Address</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+        <script src="showChildDemo.js"></script>
     </div>
-    <script src="childDemo.js"></script>
 </body>
 
 </html>
