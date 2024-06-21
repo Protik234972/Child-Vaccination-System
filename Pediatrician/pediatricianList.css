@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+header {
+    background: #31c5ac;
+    color: #fff;
+    padding-top: 0%;
+    min-height: 60px;
+    border-bottom: #e8491d 3px solid;
+}
+
+header h1 {
+    text-align: left;
+    margin: 0;
+    font-size: 36px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+header h1 img {
+    padding-top: 0px;
+    width: 80px;
+    height: 80px;
+    margin-right: 175px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #555;
+}
+
+.navbar a {
+    padding: 14px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    text-align: center;
+}
+
+.navbar a:hover {
+    background-color: #bb0606;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: rgb(247, 243, 243);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #bb0606;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    background-color: #333;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.active {
+    background-color: #31c5ac;
+}
+
+@media screen and (max-width: 500px) {
+    .navbar a {
+        float: none;
+        display: block;
+    }
+}
+
+.pediatrician-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.pediatrician-card {
+    width: 45%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.pediatrician-card h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.pediatrician-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.appointment-button {
+    background-color: #31c5ac;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.appointment-button:hover {
+    background-color: #28a297;
+}
