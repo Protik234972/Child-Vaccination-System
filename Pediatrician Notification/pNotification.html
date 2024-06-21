@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Child Vaccination Dashboard</title>
+    <title>Pediatration Dashboard</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,11 +19,11 @@
         }
 
         header {
-            background: #50b3a2;
+            background: orangered;
             color: #fff;
             padding-top: 0%;
             min-height: 60px;
-            border-bottom: #50b3a2 3px solid;
+            border-bottom: orangered 3px solid;
         }
 
         header h1 {
@@ -58,7 +58,7 @@
         }
 
         .navbar a:hover {
-            background-color: #50b3a2;
+            background-color: orangered;
         }
 
         .dropdown .dropbtn {
@@ -91,7 +91,7 @@
         }
 
         .dropdown-content a:hover {
-            background-color: #50b3a2;
+            background-color: orangered;
         }
 
         .dropdown:hover .dropdown-content {
@@ -104,7 +104,7 @@
         }
 
         .active {
-            background-color: #50b3a2;
+            background-color: orangered;
         }
 
         @media screen and (max-width: 500px) {
@@ -170,20 +170,20 @@
 
             // Sample vaccination schedule (normally, this data would come from a database)
             const vaccinationSchedule = [
-                { name: 'Hepatitis B', dueDate: '2023-01-01' },
-                { name: 'DTaP', dueDate: '2023-03-01' },
-                { name: 'MMR', dueDate: '2023-06-01' },
-                { name: 'Varicella', dueDate: '2023-07-01' },
-                { name: 'Polio', dueDate: '2024-06-20' },
-                { name: 'Influenza', dueDate: '2024-07-10' },
-                { name: 'Corona', dueDate: '2024-08-01' },
-                { name: 'Hiv', dueDate: '2024-09-01' } // Assuming Corona is due on 2024-08-01
+                { childId: '001', name: 'Hepatitis B', dueDate: '2023-01-01' },
+                { childId: '002', name: 'DTaP', dueDate: '2023-03-01' },
+                { childId: '001', name: 'MMR', dueDate: '2023-06-01' },
+                { childId: '003', name: 'Varicella', dueDate: '2023-07-01' },
+                { childId: '002', name: 'Polio', dueDate: '2024-06-20' },
+                { childId: '001', name: 'Influenza', dueDate: '2024-07-10' },
+                { childId: '003', name: 'Corona', dueDate: '2024-08-01' },
+                { childId: '001', name: 'Hiv', dueDate: '2024-09-01' } // Assuming Corona is due on 2024-08-01
             ];
 
             // Sample vaccination history (this would be dynamically updated in a real application)
             const vaccinationHistory = [
-                { name: 'Hepatitis B', date: '2023-01-10' }, // Example of a late vaccination
-                { name: 'DTaP', date: '2023-02-28' } // Example of an on-time vaccination
+                { childId: '001', name: 'Hepatitis B', date: '2023-01-10' }, // Example of a late vaccination
+                { childId: '002', name: 'DTaP', date: '2023-02-28' } // Example of an on-time vaccination
                 // MMR not yet given (example of a missed vaccine)
             ];
 
@@ -199,10 +199,10 @@
 
                 schedule.forEach(vaccine => {
                     const dueDate = new Date(vaccine.dueDate);
-                    const vaccineGiven = history.find(h => h.name === vaccine.name);
+                    const vaccineGiven = history.find(h => h.name === vaccine.name && h.childId === vaccine.childId);
                     if (!vaccineGiven || new Date(vaccineGiven.date) > dueDate) {
                         if (dueDate < new Date()) {
-                            if (!missedVaccines.find(v => v.name === vaccine.name)) {
+                            if (!missedVaccines.find(v => v.name === vaccine.name && v.childId === vaccine.childId)) {
                                 missedVaccines.push(vaccine);
                             }
                         }
@@ -220,9 +220,9 @@
 
                 schedule.forEach(vaccine => {
                     const dueDate = new Date(vaccine.dueDate);
-                    const vaccineGiven = history.find(h => h.name === vaccine.name);
+                    const vaccineGiven = history.find(h => h.name === vaccine.name && h.childId === vaccine.childId);
                     if (!vaccineGiven && dueDate > today && dueDate <= upcomingThreshold) {
-                        if (!upcomingVaccines.find(v => v.name === vaccine.name)) {
+                        if (!upcomingVaccines.find(v => v.name === vaccine.name && v.childId === vaccine.childId)) {
                             upcomingVaccines.push(vaccine);
                         }
                     }
@@ -235,18 +235,18 @@
                 let notificationsHTML = '';
 
                 if (missedVaccines.length > 0) {
-                    notificationsHTML += `<p>Missed Vaccines:</p>${missedVaccines.map(v => `<div class="notification missed"><p>${v.name} was due on ${v.dueDate}</p></div>`).join('')}`;
+                    notificationsHTML += `<p>Missed Vaccines:</p>${missedVaccines.map(v => `<div class="notification missed"><p>Child ID: ${v.childId}, ${v.name} was due on ${v.dueDate}</p></div>`).join('')}`;
                 }
 
                 if (upcomingVaccines.length > 0) {
-                    notificationsHTML += `<p>Upcoming Vaccines:</p>${upcomingVaccines.map(v => `<div class="notification upcoming"><p>${v.name} is due on ${v.dueDate}</p></div>`).join('')}`;
+                    notificationsHTML += `<p>Upcoming Vaccines:</p>${upcomingVaccines.map(v => `<div class="notification upcoming"><p>Child ID: ${v.childId}, ${v.name} is due on ${v.dueDate}</p></div>`).join('')}`;
                 }
 
                 notificationArea.innerHTML = notificationsHTML;
                 notificationArea.style.display = notificationsHTML ? 'block' : 'none';
             }
         });
-    </script>
+</script>
 </body>
 
 </html>
