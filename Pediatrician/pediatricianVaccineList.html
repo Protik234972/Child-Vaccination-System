@@ -166,28 +166,39 @@ th {
         <main>
             <h1 style="text-align: center;">Vaccine List</h1>
             <table id="vaccineTable">
-                <thead>
-                    <tr>
-                        <th>Vaccine Name</th>
-                        <th>Price (BDT)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>COVID-19 Vaccine</td>
-                        <td class="price">25</td>
-                    </tr>
-                    <tr>
-                        <td>Influenza Vaccine</td>
-                        <td class="price">15</td>
-                    </tr>
-                    <!-- Additional vaccine rows can be added here -->
-                </tbody>
+                <table id="vaccineTable">
+                    <thead>
+                        <tr>
+                            <th>Vaccine Name</th>
+                            <th>Price (BDT)</th>
+                            <th>Company</th>
+                            <th>Side-effects</th>
+                            <th>Variant</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>COVID-19 Vaccine</td>
+                            <td class="price">25</td>
+                            <td>Company A</td>
+                            <td>Fever, Sore Arm</td>
+                            <td>Variant X</td>
+                        </tr>
+                        <tr>
+                            <td>Influenza Vaccine</td>
+                            <td class="price">15</td>
+                            <td>Company B</td>
+                            <td>Nausea, Fatigue</td>
+                            <td>Variant Y</td>
+                        </tr>
+                    </tbody>
+                </table>
             </table>
         </main>
     </div>
+    
     <script>
-        function loadVaccineData() {
+    function loadVaccineData() {
     const vaccines = JSON.parse(localStorage.getItem('vaccines')) || [];
     const table = document.getElementById('vaccineTable').getElementsByTagName('tbody')[0];
     table.innerHTML = ''; // Clear existing rows
@@ -195,12 +206,22 @@ th {
         const newRow = table.insertRow();
         const nameCell = newRow.insertCell(0);
         const priceCell = newRow.insertCell(1);
+        const companyCell = newRow.insertCell(2);
+        const sideEffectsCell = newRow.insertCell(3);
+        const variantCell = newRow.insertCell(4);
 
         nameCell.innerText = vaccine.name;
         priceCell.innerText = vaccine.price;
+        companyCell.innerText = vaccine.company;
+        sideEffectsCell.innerText = vaccine.sideEffects;
+        variantCell.innerText = vaccine.variant;
+
         priceCell.className = 'price';
     });
 }
+
+// Load vaccine data on page load
+document.addEventListener('DOMContentLoaded', loadVaccineData);
     </script>
 </body>
 

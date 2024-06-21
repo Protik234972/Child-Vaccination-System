@@ -228,6 +228,9 @@ button[type="submit"]:hover {
                 <tr>
                     <th>Vaccine Name</th>
                     <th>Price (BDT)</th>
+                    <th>Company</th>
+                    <th>Side-effects</th>
+                    <th>Variant</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -235,11 +238,17 @@ button[type="submit"]:hover {
                 <tr>
                     <td>COVID-19 Vaccine</td>
                     <td class="price">25</td>
+                    <td>Company A</td>
+                    <td>Fever, Sore Arm</td>
+                    <td>Variant X</td>
                     <td><button class="update-btn" onclick="updatePrice(this)">Update Price</button></td>
                 </tr>
                 <tr>
                     <td>Influenza Vaccine</td>
                     <td class="price">15</td>
+                    <td>Company B</td>
+                    <td>Nausea, Fatigue</td>
+                    <td>Variant Y</td>
                     <td><button class="update-btn" onclick="updatePrice(this)">Update Price</button></td>
                 </tr>
             </tbody>
@@ -250,6 +259,12 @@ button[type="submit"]:hover {
             <input type="text" id="vaccineName" required>
             <label for="vaccinePrice">Price (BDT):</label>
             <input type="number" id="vaccinePrice" required>
+            <label for="vaccineCompany">Company:</label>
+            <input type="text" id="vaccineCompany" required>
+            <label for="vaccineSideEffects">Side-effects:</label>
+            <input type="text" id="vaccineSideEffects" required>
+            <label for="vaccineVariant">Variant:</label>
+            <input type="text" id="vaccineVariant" required>
             <button type="submit">Add Vaccine</button>
         </form>
     </main>
