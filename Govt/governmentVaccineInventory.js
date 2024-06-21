@@ -1,4 +1,3 @@
-// Function to update the price of a vaccine
 function updatePrice(button) {
     const row = button.parentElement.parentElement;
     const priceCell = row.cells[1];
@@ -10,13 +9,15 @@ function updatePrice(button) {
     }
 }
 
-// Function to add a new vaccine or update the price if it already exists
 function addVaccine(event) {
     event.preventDefault();
     const vaccineName = document.getElementById("vaccineName").value.trim();
     const vaccinePrice = document.getElementById("vaccinePrice").value.trim();
+    const vaccineCompany = document.getElementById("vaccineCompany").value.trim();
+    const vaccineSideEffects = document.getElementById("vaccineSideEffects").value.trim();
+    const vaccineVariant = document.getElementById("vaccineVariant").value.trim();
 
-    if (vaccineName && vaccinePrice) {
+    if (vaccineName && vaccinePrice && vaccineCompany && vaccineSideEffects && vaccineVariant) {
         const table = document.getElementById("vaccineTable").getElementsByTagName('tbody')[0];
         let existingRow = null;
 
@@ -29,17 +30,27 @@ function addVaccine(event) {
         }
 
         if (existingRow) {
-            // Update the existing vaccine price
+            // Update the existing vaccine data
             existingRow.cells[1].innerText = vaccinePrice;
+            existingRow.cells[2].innerText = vaccineCompany;
+            existingRow.cells[3].innerText = vaccineSideEffects;
+            existingRow.cells[4].innerText = vaccineVariant;
         } else {
             // Add a new vaccine
             const newRow = table.insertRow();
             const nameCell = newRow.insertCell(0);
             const priceCell = newRow.insertCell(1);
-            const actionCell = newRow.insertCell(2);
+            const companyCell = newRow.insertCell(2);
+            const sideEffectsCell = newRow.insertCell(3);
+            const variantCell = newRow.insertCell(4);
+            const actionCell = newRow.insertCell(5);
 
             nameCell.innerText = vaccineName;
             priceCell.innerText = vaccinePrice;
+            companyCell.innerText = vaccineCompany;
+            sideEffectsCell.innerText = vaccineSideEffects;
+            variantCell.innerText = vaccineVariant;
+
             priceCell.className = "price";
 
             const updateButton = document.createElement("button");
@@ -54,19 +65,20 @@ function addVaccine(event) {
     }
 }
 
-// Function to save vaccine data to local storage
 function saveVaccineData() {
     const rows = document.querySelectorAll('#vaccineTable tbody tr');
     const vaccines = Array.from(rows).map(row => {
         return {
             name: row.cells[0].innerText,
-            price: row.cells[1].innerText
+            price: row.cells[1].innerText,
+            company: row.cells[2].innerText,
+            sideEffects: row.cells[3].innerText,
+            variant: row.cells[4].innerText
         };
     });
     localStorage.setItem('vaccines', JSON.stringify(vaccines));
 }
 
-// Function to load vaccine data from local storage
 function loadVaccineData() {
     const vaccines = JSON.parse(localStorage.getItem('vaccines')) || [];
     const table = document.getElementById('vaccineTable').getElementsByTagName('tbody')[0];
@@ -75,10 +87,17 @@ function loadVaccineData() {
         const newRow = table.insertRow();
         const nameCell = newRow.insertCell(0);
         const priceCell = newRow.insertCell(1);
-        const actionCell = newRow.insertCell(2);
+        const companyCell = newRow.insertCell(2);
+        const sideEffectsCell = newRow.insertCell(3);
+        const variantCell = newRow.insertCell(4);
+        const actionCell = newRow.insertCell(5);
 
         nameCell.innerText = vaccine.name;
         priceCell.innerText = vaccine.price;
+        companyCell.innerText = vaccine.company;
+        sideEffectsCell.innerText = vaccine.sideEffects;
+        variantCell.innerText = vaccine.variant;
+
         priceCell.className = 'price';
 
         const updateButton = document.createElement('button');
@@ -91,42 +110,3 @@ function loadVaccineData() {
 
 // Load vaccine data on page load
 document.addEventListener('DOMContentLoaded', loadVaccineData);
-
-
-
-// function updatePrice(button) {
-//     const priceCell = button.parentElement.previousElementSibling;
-//     const currentPrice = priceCell.innerText;
-//     const newPrice = prompt("Enter new price:", currentPrice);
-//     if (newPrice !== null && newPrice !== "") {
-//         priceCell.innerText = newPrice;
-//     }
-// }
-
-// function addVaccine(event) {
-//     event.preventDefault();
-//     const vaccineName = document.getElementById("vaccineName").value;
-//     const vaccinePrice = document.getElementById("vaccinePrice").value;
-
-//     if (vaccineName && vaccinePrice) {
-//         const table = document.getElementById("vaccineTable").getElementsByTagName('tbody')[0];
-//         const newRow = table.insertRow();
-
-//         const nameCell = newRow.insertCell(0);
-//         const priceCell = newRow.insertCell(1);
-//         const actionCell = newRow.insertCell(2);
-
-//         nameCell.innerText = vaccineName;
-//         priceCell.innerText = vaccinePrice;
-//         priceCell.className = "price";
-        
-//         const updateButton = document.createElement("button");
-//         updateButton.className = "update-btn";
-//         updateButton.innerText = "Update Price";
-//         updateButton.setAttribute("onclick", "updatePrice(this)");
-//         actionCell.appendChild(updateButton);
-
-//         document.getElementById("addVaccineForm").reset();
-//     }
-// }
-

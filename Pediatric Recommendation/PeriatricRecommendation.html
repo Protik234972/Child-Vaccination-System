@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pediatric Recommendation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #50b3a2;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+
+        header h1 {
+            text-align: center;
+            margin: 0;
+            font-size: 36px;
+            text-transform: uppercase;
+        }
+
+        main {
+            padding: 20px;
+            background: #fff;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f4f4f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        form h2 {
+            text-align: center;
+            color: #e8491d;
+        }
+
+        form .form-group {
+            margin-bottom: 15px;
+        }
+
+        form .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form .form-group input,
+        form .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        form .form-group button {
+            width: 100%;
+            padding: 10px;
+            background: #50b3a2;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        form .form-group button:hover {
+            background: #e8491d;
+        }
+
+        .recommendation {
+            display: none;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f4f4f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .recommendation h2 {
+            text-align: center;
+            color: #50b3a2;
+        }
+
+        .recommendation p {
+            text-align: center;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer .footer-item {
+            margin-bottom: 20px;
+        }
+
+        footer .footer-item h3 {
+            margin-bottom: 10px;
+        }
+
+        footer .footer-item a {
+            color: #e8491d;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Pediatric Recommendation</h1>
+        </header>
+        <main>
+            <form id="searchForm">
+                <h2>Search Child</h2>
+                <div class="form-group">
+                    <label for="birthId">Birth ID:</label>
+                    <input type="text" id="birthId" name="birthId" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Search</button>
+                </div>
+            </form>
+            <form id="recommendationForm" style="display:none;">
+                <h2>Enter Recommendation</h2>
+                <div class="form-group">
+                    <label for="recommendation">Recommendation:</label>
+                    <textarea id="recommendation" name="recommendation" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Submit Recommendation</button>
+                </div>
+            </form>
+            <div class="recommendation" id="recommendationBox">
+                <h2>Submitted Recommendation</h2>
+                <p id="recommendationText"></p>
+            </div>
+        </main>
+        <footer>
+            <div class="footer-item">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:info@vaccinecenter.com">info@vaccinecenter.com</a></p>
+                <p>Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
+            </div>
+            <div class="footer-item">
+                <h3>Location</h3>
+                <p><a href="https://maps.google.com">Find us on Google Maps</a></p>
+            </div>
+            <div class="footer-item">
+                <h3>Products</h3>
+                <p><a href="products.html">Our Products</a></p>
+            </div>
+            <div class="footer-item">
+                <h3>Blog</h3>
+                <p><a href="blog.html">Latest Updates</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const birthId = document.getElementById('birthId').value;
+            const name = document.getElementById('name').value;
+
+            // Simulating database retrieval based on birth ID and name
+            const childData = {
+                birthId: birthId,
+                name: name,
+                recommendation: "Existing recommendation for this child."
+            };
+
+            if (childData) {
+                alert(`Child found: ${childData.name} (Birth ID: ${childData.birthId})`);
+                document.getElementById('recommendationForm').style.display = 'block';
+            } else {
+                alert('Child not found. Please check the Birth ID and Name.');
+            }
+        });
+
+        document.getElementById('recommendationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const recommendation = document.getElementById('recommendation').value;
+            const name = document.getElementById('name').value;
+
+            // Simulating updating recommendation in the database
+            const updatedRecommendation = `For ${name}, the new recommendation is: ${recommendation}`;
+
+            document.getElementById('recommendationText').textContent = updatedRecommendation;
+            document.getElementById('recommendationBox').style.display = 'block';
+
+            // Simulate sending recommendation via email or contact method
+            console.log(`Sending recommendation to user: ${updatedRecommendation}`);
+            alert('Recommendation has been sent to the registered contact method.');
+        });
+    </script>
+</body>
+</html>
