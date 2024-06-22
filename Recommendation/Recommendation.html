@@ -20,23 +20,115 @@
         }
 
         header {
-            background: #50b3a2;
+            background: #31c5ac;
             color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
+            padding-top: 0%;
+            min-height: 60px;
             border-bottom: #e8491d 3px solid;
         }
 
         header h1 {
-            text-align: center;
+            text-align: left;
             margin: 0;
             font-size: 36px;
             text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        header h1 img {
+            padding-top: 0px;
+            width: 80px;
+            height: auto;
+            margin-right: 175px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #555;
+        }
+
+        .navbar a {
+            padding: 14px 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            text-align: center;
+        }
+
+        .navbar a:hover {
+            background-color: #bb0606;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            /* Important for vertical align on mobile phones */
+            margin: 0;
+            /* Important for vertical align on mobile phones */
+        }
+
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            float: none;
+            color: rgb(247, 243, 243);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        /* Add a grey background color to dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #bb0606;
+        }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+            background-color: #333;
+        }
+
+        /* Add a red background color to navbar links on hover */
+        .dropdown:hover .dropbtn {
+            background-color: red;
+        }
+
+        .active {
+            background-color: #31c5ac;
+        }
+
+        @media screen and (max-width: 500px) {
+            .navbar a {
+                float: none;
+                display: block;
+            }
         }
 
         main {
             padding: 20px;
             background: #fff;
+        }
+
+        main section {
+            margin-bottom: 20px;
         }
 
         form {
@@ -126,8 +218,51 @@
 <body>
     <div class="container">
         <header>
-            <h1>Recommendation</h1>
+            <h1> <img src="../Image/Logo.jpg" alt="Child logo">Child Vaccination Dashboard</h1>
         </header>
+        <div class="navbar">
+            <a class="active" href="../Dashboard/dashboard.html"><i class="fa fa-home"></i> Home</a>
+
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-hospital-o"></i> Vaccination Center</button>
+                <div class="dropdown-content">
+                    <a href="../Vaccination list/centerList.html"><i class="fa fa-list"></i> Center list</a>
+                    <a href="../Vaccination list/userVaccinationList.html"><i class="fa fa-list"></i> Vaccination List</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-user-md"></i> Pediatrician </button>
+                <div class="dropdown-content">
+                    <a href="../Pediatrician/pediatricianList.html"><i class="fa fa-user"></i> Pediatrician Profile</a>
+                    <a href="../Recommendation/Recommendation.html"><i class="fa fa-file-text"></i> Pediatric Recommendation</a>
+                </div>
+            </div>
+
+            <a href="../Notification/notification.html"><i class="fa fa-bell"></i> Notifications</a>
+
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-file"></i> Reports</button>
+                <div class="dropdown-content">
+                    <a href="../Child Vaccination History/childHistoryData.html"><i class="fa fa-history"></i> Vaccine History</a>
+                    <a href="../MedicalHistoryData/SearchRecord.html"><i class="fa fa-info-circle"></i> Medical Record</a>
+                </div>
+
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-bars"></i> Menu</button>
+                <div class="dropdown-content">
+                    <a href="#Profile"><i class="fa fa-user"></i> Profile</a>
+                    <a href="../Tracker&Reminder/VaccineInformationandTiming.html"><i class="fa fa-calendar"></i> Vaccination Schedule</a>
+                    <a href="../Tracker&Reminder/VaccineTrackerandReminders.html"><i class="fa fa-clock-o"></i> Vaccine Tracker</a>
+                    <a href="../Child Demographic Data Form/childDemo.html"><i class="fa fa-registered"></i> Child Registration</a>
+                    <a href="../Recommendation/Recommendation.html"><i class="fa fa-lightbulb-o"></i> Recommendation</a>
+                    <a href="../Login Page/LoginPage.html"><i class="fa fa-sign-out"></i> Logout</a>
+                    
+                </div>
+            </div>
+        </div>
         <main>
             <form id="recommendationForm">
                 <h2>Enter Details</h2>

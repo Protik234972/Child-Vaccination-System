@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pediatric Recommendation</title>
     <style>
-        body {
+              
+              body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
             margin: 0;
@@ -19,26 +20,109 @@
             overflow: hidden;
         }
 
+        .burger-menu {
+            font-size: 30px;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
         header {
-            background: #50b3a2;
+            background: orangered;
             color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #e8491d 3px solid;
+            padding-top: 0%;
+            min-height: 60px;
+            border-bottom: orange 3px solid;
         }
 
         header h1 {
-            text-align: center;
+            text-align: left;
             margin: 0;
             font-size: 36px;
             text-transform: uppercase;
+            display: flex;
+            align-items: center;
+        }
+
+        header h1 img {
+            padding-top: 10px;
+            width: 100px;
+            height: auto;
+            margin-right: 175px;
+        }
+
+        .navbar {
+            display: flex;
+            background-color: #555;
+            justify-content: space-around;
+            overflow: auto;
+        }
+
+        .navbar a {
+            float: left;
+            padding: 12px;
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navbar a:hover {
+            background-color: orange;
+        }
+
+        
+
+        @media screen and (max-width: 500px) {
+            .navbar a {
+                float: none;
+                display: block;
+            }
         }
 
         main {
             padding: 20px;
             background: #fff;
+            text-align: center;
         }
 
+        main section {
+            margin-bottom: 20px;
+        }
         form {
             max-width: 600px;
             margin: 0 auto;
@@ -127,8 +211,17 @@
 <body>
     <div class="container">
         <header>
-            <h1>Pediatric Recommendation</h1>
+            <h1> <img src="../Image/logo2.0.PNG" alt="Child logo">Pediatrician Dashboard</h1>
         </header>
+        <div class="navbar">
+            <a class="active" href="../Pediatrician/pediatricianDashboard.html"><i class="fa fa-home"></i> Home</a>
+            <a class="Appointments" href="../Pediatrician/pediatricianAppointment.html"><i class="fa fa-file"></i> Appointments</a>
+            <a href="../MedicalHistoryData/SearchRecord.html"><i class="fa fa-info-circle"></i> Medical Record</a>
+            <a href="../Pediatrician/pediatricianVaccineList.html"><i class="fa fa-list"></i> Vaccination List</a>
+            <a href="../Pediatric Recommendation/PediatricRecommendation.html"><i class="fa fa-envelope"></i>Recommendations</a>
+            <a href="../Pediatrician Notification/pNotification.html"><i class="fa fa-bell"></i> Notifications</a>
+            <a href="../Login Page/LoginPage.html"><i class="fa fa-user">Log Out</i></a>
+            </div>
         <main>
             <form id="searchForm">
                 <h2>Search Child</h2>
