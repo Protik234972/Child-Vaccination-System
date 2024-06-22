@@ -104,7 +104,54 @@
             background-color: orange;
         }
 
-        
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            /* Important for vertical align on mobile phones */
+            margin: 0;
+            /* Important for vertical align on mobile phones */
+        }
+
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            float: none;
+            color: rgb(247, 243, 243);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        /* Add a grey background color to dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #bb0606;
+        }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+            background-color: #333;
+        }
+
+        /* Add a red background color to navbar links on hover */
+        .dropdown:hover .dropbtn {
+            background-color: red;
+        }
 
         @media screen and (max-width: 500px) {
             .navbar a {
@@ -177,7 +224,13 @@
         <div class="navbar">
             <a class="active" href="../Pediatrician/pediatricianDashboard.html"><i class="fa fa-home"></i> Home</a>
             <a class="Appointments" href="../Pediatrician/pediatricianAppointment.html"><i class="fa fa-file"></i> Appointments</a>
-            <a href="../MedicalHistoryData/SearchRecord.html"><i class="fa fa-info-circle"></i> Medical Record</a>
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-hospital-o"></i> Records</button>
+                <div class="dropdown-content">
+                    <a href="../MedicalHistoryData/SearchRecord.html"><i class="fa fa-info-circle"></i> Medical Record</a>
+                    <a href="../Child Vaccination History/addVaccinationHistory.html"><i class="fa fa-list"></i> Vaccination Record</a>
+                </div>
+            </div>
             <a href="../Pediatrician/pediatricianVaccineList.html"><i class="fa fa-list"></i> Vaccination List</a>
             <a href="../Pediatric Recommendation/PediatricRecommendation.html"><i class="fa fa-envelope"></i>Recommendations</a>
             <a href="../Pediatrician Notification/pNotification.html"><i class="fa fa-bell"></i> Notifications</a>

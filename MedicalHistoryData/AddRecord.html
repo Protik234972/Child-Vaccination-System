@@ -15,15 +15,20 @@
             <h1> <img src="../Image/Logo.jpg" alt="Child logo">Pediatrician Medical Records</h1>
         </header>
         <div class="navbar">
-            <div class="navbar">
-                <a class="active" href="../Pediatrician/pediatricianDashboard.html"><i class="fa fa-home"></i> Home</a>
-                <a class="Appointments" href="../Pediatrician/pediatricianAppointment.html"><i class="fa fa-file"></i> Appointments</a>
-                <a href="../MedicalHistoryData/SearchRecord.html"><i class="fa fa-info-circle"></i> Medical Record</a>
-                <a href="../Pediatrician/pediatricianVaccineList.html"><i class="fa fa-list"></i> Vaccination List</a>
-                <a href="../Pediatrician Notification/pNotification.html"><i class="fa fa-bell"></i> Notifications</a>
-                <a href="../Login Page/LoginPage.html"><i class="fa fa-user">Log Out</i></a>
+            <a class="active" href="../Pediatrician/pediatricianDashboard.html"><i class="fa fa-home"></i> Home</a>
+            <a class="Appointments" href="../Pediatrician/pediatricianAppointment.html"><i class="fa fa-file"></i> Appointments</a>
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-hospital-o"></i> Records</button>
+                <div class="dropdown-content">
+                    <a href="../MedicalHistoryData/SearchRecord.html"><i class="fa fa-info-circle"></i> Medical Record</a>
+                    <a href="../Child Vaccination History/addVaccinationHistory.html"><i class="fa fa-list"></i> Vaccination Record</a>
                 </div>
-    </div>
+            </div>
+            <a href="../Pediatrician/pediatricianVaccineList.html"><i class="fa fa-list"></i> Vaccination List</a>
+            <a href="../Pediatric Recommendation/PediatricRecommendation.html"><i class="fa fa-envelope"></i>Recommendations</a>
+            <a href="../Pediatrician Notification/pNotification.html"><i class="fa fa-bell"></i> Notifications</a>
+            <a href="../Login Page/LoginPage.html"><i class="fa fa-user">Log Out</i></a>
+            </div>
     <main>
         <section class="form-section">
             <form id="medical-form">
