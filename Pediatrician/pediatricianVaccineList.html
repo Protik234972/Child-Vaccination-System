@@ -1,152 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaccine Inventory</title>
+    <title>Pediatrician Dashboard</title>
     <style>
         body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
-    color: #333;
-}
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-    overflow: hidden;
-}
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
 
-header {
-    background: orangered;
-    color: #fff;
-    padding-top: 0%;
-    min-height: 60px;
-    border-bottom: orange 3px solid;
-}
+        header {
+            background: #31c5ac;
+            color: #fff;
+            padding-top: 0%;
+            min-height: 60px;
+            border-bottom: #e8491d 3px solid;
+        }
 
-header h1 {
-    text-align: left;
-    margin: 0;
-    font-size: 36px;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    position: relative;
+        header h1 {
+            text-align: left;
+            margin: 0;
+            font-size: 36px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
 
-}
+        header h1 img {
+            padding-top: 0px;
+            width: 80px;
+            height: auto;
+            margin-right: 175px;
+        }
 
-header h1 img {
-    padding-top: 0px;
-    width: 100px;
-    height: auto;
-    margin-right: 175px;
-}
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #555;
+        }
 
-.navbar {
-    display: flex;
-    justify-content: space-around;
-    background-color: #555;
-}
+        .navbar a {
+            padding: 14px 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            text-align: center;
+        }
 
-.navbar a {
-    padding: 14px 20px;
-    color: white;
-    text-decoration: none;
-    font-size: 17px;
-    text-align: center;
-}
+        .navbar a:hover {
+            background-color: #bb0606;
+        }
 
-.navbar a:hover {
-    background-color: orange;
-}
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
 
-.dropdown .dropbtn {
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    /* Important for vertical align on mobile phones */
-    margin: 0;
-    /* Important for vertical align on mobile phones */
-}
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
 
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
+        .dropdown-content a {
+            float: none;
+            color: rgb(247, 243, 243);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-    float: none;
-    color: rgb(247, 243, 243);
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
+        .dropdown-content a:hover {
+            background-color: #bb0606;
+        }
 
-/* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
-    background-color: #bb0606;
-}
+        .dropdown:hover .dropdown-content {
+            display: block;
+            background-color: #333;
+        }
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-    background-color: #333;
-}
+        .dropdown:hover .dropbtn {
+            background-color: red;
+        }
 
-/* Add a red background color to navbar links on hover */
-.dropdown:hover .dropbtn {
-    background-color: orange;
-}
+        @media screen and (max-width: 500px) {
+            .navbar a {
+                float: none;
+                display: block;
+            }
+        }
 
+        main {
+            padding: 20px;
+            background: #fff;
+            text-align: center;
+        }
 
+        main section {
+            margin-bottom: 20px;
+        }
 
-main {
-    padding: 20px;
-    background: #fff;
-}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
 
-main section {
-    margin-bottom: 20px;
-}
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+        }
 
-table,
-th,
-td {
-    border: 1px solid #ddd;
-}
+        th {
+            background-color: #50b3a2;
+            color: white;
+        }
 
-th,
-td {
-    padding: 8px;
-    text-align: left;
-}
-
-th {
-    background-color: #f2f2f2;
-}
-
-.footer {
+        .footer {
             background: #333;
             color: #fff;
             padding: 20px 0;
@@ -167,6 +164,7 @@ th {
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
     <div class="container">
