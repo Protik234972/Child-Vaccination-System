@@ -18,54 +18,12 @@
             overflow: hidden;
         }
 
-        .burger-menu {
-            font-size: 30px;
-            cursor: pointer;
-            position: absolute;
-            top: 15px;
-            left: 15px;
-        }
-
-        .sidenav {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #111;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-        }
-
-        .sidenav a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .sidenav a:hover {
-            color: #f1f1f1;
-        }
-
-        .sidenav .closebtn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-        }
-
         header {
-            background: orangered;
+            background: #31c5ac;
             color: #fff;
             padding-top: 0%;
             min-height: 60px;
-            border-bottom: orange 3px solid;
+            border-bottom: #e8491d 3px solid;
         }
 
         header h1 {
@@ -75,33 +33,34 @@
             text-transform: uppercase;
             display: flex;
             align-items: center;
+            position: relative;
         }
 
         header h1 img {
-            padding-top: 10px;
-            width: 100px;
+            padding-top: 0px;
+            width: 80px;
             height: auto;
             margin-right: 175px;
         }
 
         .navbar {
             display: flex;
-            background-color: #555;
             justify-content: space-around;
-            overflow: auto;
+            background-color: #555;
         }
 
         .navbar a {
-            float: left;
-            padding: 12px;
+            padding: 14px 20px;
             color: white;
             text-decoration: none;
             font-size: 17px;
+            text-align: center;
         }
 
         .navbar a:hover {
-            background-color: orange;
+            background-color: #bb0606;
         }
+
         .dropdown .dropbtn {
             font-size: 16px;
             border: none;
@@ -110,12 +69,9 @@
             padding: 14px 16px;
             background-color: inherit;
             font-family: inherit;
-            /* Important for vertical align on mobile phones */
             margin: 0;
-            /* Important for vertical align on mobile phones */
         }
 
-        /* Dropdown content (hidden by default) */
         .dropdown-content {
             display: none;
             position: absolute;
@@ -125,7 +81,6 @@
             z-index: 1;
         }
 
-        /* Links inside the dropdown */
         .dropdown-content a {
             float: none;
             color: rgb(247, 243, 243);
@@ -135,24 +90,17 @@
             text-align: left;
         }
 
-        /* Add a grey background color to dropdown links on hover */
         .dropdown-content a:hover {
             background-color: #bb0606;
         }
 
-        /* Show the dropdown menu on hover */
         .dropdown:hover .dropdown-content {
             display: block;
             background-color: #333;
         }
 
-        /* Add a red background color to navbar links on hover */
         .dropdown:hover .dropbtn {
             background-color: red;
-        }
-
-        .active {
-            background-color: #555;
         }
 
         @media screen and (max-width: 500px) {
@@ -191,9 +139,10 @@
         }
 
         th {
-            background-color: orangered;
+            background-color: #50b3a2;
             color: white;
         }
+
         .footer {
             background: #333;
             color: #fff;
@@ -215,6 +164,7 @@
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
