@@ -182,6 +182,43 @@ textarea {
     resize: vertical;
 }
 
+.form-group label {
+
+    display: inline-block;
+
+    margin-right: 10px;
+
+}
+
+
+.form-group input[type="radio"],.form-group input[type="checkbox"] {
+
+    display: inline-block;
+    margin-right: 10px;
+
+}
+.checkbox-group {
+
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+
+}
+
+
+.checkbox-group label {
+
+    margin-right: 20px;
+
+}
+
+
+.checkbox-group input[type="checkbox"] {
+
+    margin-right: 10px;
+
+}
+
 button {
     background-color: #31c5ac;
     color: white;

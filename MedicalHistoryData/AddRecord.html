@@ -55,13 +55,13 @@
                     <input type="text" id="age" name="age" readonly>
                 </div>
                 <div class="form-group">
-                    <label for="gender">Gender:</label>
-                    <select id="gender" name="gender" required>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
+                    <label>Gender:</label>
+                    <div class="form-gender">
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </div>
                 <div class="form-group">
                     <label for="vaccine-count">Number of Vaccines Taken:</label>
                     <input type="number" id="vaccine-count" name="vaccine-count" required>
@@ -75,8 +75,19 @@
                     <textarea id="medical-history" name="medical-history" rows="5" required></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="allergies">Allergies:</label>
-                    <input type="text" id="allergies" name="allergies">
+                    <label>Allergies:</label>
+                    <br>
+                    <input type="checkbox" id="allergy1" name="allergies" value="Peanuts">
+                    <label for="allergy1">Peanuts</label><br>
+                    <input type="checkbox" id="allergy2" name="allergies" value="Dairy">
+                    <label for="allergy2">Dairy</label><br>
+                    <input type="checkbox" id="allergy3" name="allergies" value="Gluten">
+                    <label for="allergy3">Gluten</label><br>
+                    <input type="checkbox" id="allergy4" name="allergies" value="Shellfish">
+                    <label for="allergy4">Shellfish</label><br>
+                    <input type="checkbox" id="allergy5" name="allergies" value="Other">
+                    <label for="allergy5">Other</label>
+                    <input type="text" id="other-allergy" name="other-allergy">
                 </div>
                 <div class="form-group">
                     <label for="medications">Current Medications:</label>
