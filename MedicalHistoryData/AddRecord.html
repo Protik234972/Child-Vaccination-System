@@ -29,50 +29,53 @@
             <a href="../Pediatrician Notification/pNotification.html"><i class="fa fa-bell"></i> Notifications</a>
             <a href="../Login Page/LoginPage.html"><i class="fa fa-user">Log Out</i></a>
             </div>
-    <main>
-        <section class="form-section">
-            <form id="medical-form">
-                <div class="background">
-                    <form id="form-pading">
-                        <div class="form-header">
-                            <h1>Child Medical Record Form</h1>
-                            <p>Please fill out this form with the required information</p>
-                        </div>
 
-            <div class="form-columns">
-            <div class="form-column">
-                <div class="form-group">
-                    <label for="child-id">Child's ID:</label>
-                    <input type="text" id="child-id" name="child-id" placeholder="Child Id" required>
+        <div class="background">
+            <form id="form-pading" class="medical-form">
+                <div class="form-header">
+                    <h1>Child Medical Record Form</h1>
+                    <p>Please fill out this form with the required information</p>
                 </div>
-                <div class="form-group">
-                    <label for="child-name">Child's Name:</label>
-                    <input type="text" id="child-name" name="child-name" placeholder="Child Name" required>
-                </div>
-                <div class="form-group">
+        
+                <div class="form-columns">
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label for="child-id">Child's ID:</label>
+                            <input type="text" id="child-id" name="child-id" placeholder="Child ID" required>
+                        </div>
+                        <div class="form-group">
+                       <label for="child-name">Child's Name:</label>
+                      <input type="text" id="child-name" name="child-name" placeholder="Child Name" required>
+                      </div>
+                      <div class="form-group">
                     <label for="dob">Date of Birth:</label>
                     <input type="date" id="dob" name="dob" placeholder="Date of Birth" required>
-                </div>
-                <div class="form-group">
+                    </div>
+                    <div class="form-group">
                     <label for="age">Age:</label>
                     <input type="text" id="age" name="age" placeholder="Age" readonly>
-                </div>
-                <div class="form-group">
-                    <label>Gender:</label>
-                    <div class="form-gender">
-                        <input type="radio" id="male" name="gender" value="male">
-                        <label for="male">Male</label>
-                        <input type="radio" id="female" name="gender" value="female">
-                        <label for="female">Female</label>
                     </div>
-            </div>
-            <div class="form-column">
-                <div class="form-group">
+                        <div class="form-group">
+                            <label>Gender:</label>
+                            <div class="form-gender">
+                                <input type="radio" id="male" name="gender" value="male">
+                                <label for="male">Male</label>
+                                <input type="radio" id="female" name="gender" value="female">
+                                <label for="female">Female</label>
+                            </div>
+                        </div>
+                       
+                        <div class="form-group">
+                            <label for="mobile-no">Mobile No.:</label>
+                            <input type="tel" id="mobile-no" name="mobile-no" placeholder="01XXXXXXXXX" required>
+                        </div>
+                    </div>
+                    <div class="form-column">
+                        <div class="form-group">
                     <label for="vaccine-count">Number of Vaccines Taken:</label>
                     <input type="number" id="vaccine-count" name="vaccine-count" required>
                 </div>
-
-                <div class="form-group">
+                        <div class="form-group">
                     <label for="vaccine-names">Names of Vaccines Taken:</label>
                     <textarea id="vaccine-names" name="vaccine-names" rows="3" placeholder="Name of Vaccines" required></textarea>
                 </div>
@@ -81,21 +84,8 @@
                     <textarea id="medical-history" name="medical-history" rows="5" placeholder="Medical History" required></textarea>
                 </div>
                 <div class="form-group">
-                    <label>Allergies:</label>
-                    <br>
-                    <input type="checkbox" id="allergy1" name="allergies" value="Peanuts">
-                    <label for="allergy1">Peanuts</label><br>
-                    <input type="checkbox" id="allergy2" name="allergies" value="Dairy">
-                    <label for="allergy2">Dairy</label><br>
-                    <input type="checkbox" id="allergy3" name="allergies" value="Gluten">
-                    <label for="allergy3">Gluten</label><br>
-                    <input type="checkbox" id="allergy4" name="allergies" value="Shellfish">
-                    <label for="allergy4">Shellfish</label><br>
-                    <input type="checkbox" id="allergy5" name="allergies" value="Meat">
-                    <label for="allergy5">Meat</label><br>
-                    <input type="checkbox" id="allergy6" name="allergies" value="Other">
-                    <label for="allergy6">Other</label>
-                    <input type="text" id="other-allergy" name="other-allergy">
+                    <label for="Allergies">Allergies:</label>
+                    <textarea id="allergies" name="allergies" rows="5" placeholder="State Allergies" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="medications">Current Medications:</label>
@@ -109,23 +99,39 @@
                     <label for="doctor-contact">Doctor's Contact:</label>
                     <input type="tel" id="doctor-contact" name="doctor-contact" placeholder="01XXXXXXXXX" required>
                 </div>
-            </div>
-                <button type="submit">Add Record</button>
+                </div>
+                </div>
+
+                <div class="form-group submit">
+                    <input type="submit" value="Add Record">
+                </div>
             </form>
-        </section>
+
+        </div> 
+        </div>
     </main>
-    <footer>
-        <div class="footer">
-
-            <p>Contact us:</p>
-
-            <p>Email: <a href="mailto:example@example.com">example@example.com</a></p>
-
-            <p>Phone: <a href="tel:+1234567890">+1234567890</a></p>
-
+    <footer class="footer">
+        <div class="footer-item">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:info@vaccinecenter.com">info@vaccinecenter.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
+        </div>
+        <div class="footer-item">
+            <h3>Location</h3>
+            <p><a href="https://maps.google.com">Find us on Google Maps</a></p>
+        </div>
+        <div class="footer-item">
+            <h3>Products</h3>
+            <p><a href="../Vaccination list/userVaccinationList.html">Our Products</a></p>
+        </div>
+        <div class="footer-item">
+            <h3>Blog</h3>
+            <p><a href="blog.html">Latest Updates</a></p>
         </div>
     </footer>
 
     <script src="medicalRecord.js"></script>
 </body>
 </html>
+
+
