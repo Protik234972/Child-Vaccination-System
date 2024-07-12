@@ -1,110 +1,143 @@
+// medicalRecord.js
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    const medicalForm = document.getElementById('medical-form');
-    const recordList = document.getElementById('record-list');
-    const records = JSON.parse(localStorage.getItem('records')) || [];
-
+document.addEventListener("DOMContentLoaded", function() {
+    // Function to calculate age in years, months, and days
     function calculateAge(dob) {
         const birthDate = new Date(dob);
         const today = new Date();
-        let ageYears = today.getFullYear() - birthDate.getFullYear();
-        let ageMonths = today.getMonth() - birthDate.getMonth();
-        let ageDays = today.getDate() - birthDate.getDate();
+        let years = today.getFullYear() - birthDate.getFullYear();
+        let months = today.getMonth() - birthDate.getMonth();
+        let days = today.getDate() - birthDate.getDate();
 
-        if (ageDays < 0) {
-            ageMonths -= 1;
-            ageDays += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
-        }
-        if (ageMonths < 0) {
-            ageYears -= 1;
-            ageMonths += 12;
+        if (days < 0) {
+            months--;
+            days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
         }
 
-        return `${ageYears} years, ${ageMonths} months, ${ageDays} days`;
+        if (months < 0) {
+            years--;
+            months += 12;
+        }
+
+        return `${years} years, ${months} months, and ${days} days`;
     }
 
-    if (medicalForm) {
-        const dobInput = document.getElementById('dob');
-        const ageInput = document.getElementById('age');
-
-        dobInput.addEventListener('change', () => {
-            ageInput.value = calculateAge(dobInput.value);
-        });
-
-        medicalForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const newRecord = {
-                id: document.getElementById('child-id').value,
-                name: document.getElementById('child-name').value,
-                dob: document.getElementById('dob').value,
-                age: document.getElementById('age').value,
-                gender: document.getElementById('gender').value,
-                vaccineCount: document.getElementById('vaccine-count').value,
-                vaccineNames: document.getElementById('vaccine-names').value,
-                medicalHistory: document.getElementById('medical-history').value,
-                allergies: document.getElementById('allergies').value,
-                medications: document.getElementById('medications').value,
-                doctorName: document.getElementById('doctor-name').value,
-                doctorContact: document.getElementById('doctor-contact').value
-            };
-
-            records.push(newRecord);
-            localStorage.setItem('records', JSON.stringify(records));
-            alert('Medical record added successfully');
-            medicalForm.reset();
-            window.location.href = 'SearchRecord.html';
-        });
-    }
-
-    if (recordList) {
-        displayRecords(records);
-
-        recordList.addEventListener('click', (e) => {
-            if (e.target.classList.contains('view-record')) {
-                const recordId = e.target.dataset.id;
-                const record = records.find(rec => rec.id === recordId);
-                if (record) {
-                    alert(`
-                        Name: ${record.name}
-                        DOB: ${record.dob}
-                        Age: ${record.age}
-                        Gender: ${record.gender}
-                        Vaccines: ${record.vaccineCount} - ${record.vaccineNames}
-                        Medical History: ${record.medicalHistory}
-                        Allergies: ${record.allergies}
-                        Current Medications: ${record.medications}
-                        Doctor's Name: ${record.doctorName}
-                        Doctor's Contact: ${record.doctorContact}
-                    `);
-                }
-            } else if (e.target.classList.contains('delete-record')) {
-                const recordId = e.target.dataset.id;
-                const recordIndex = records.findIndex(rec => rec.id === recordId);
-                if (recordIndex > -1) {
-                    records.splice(recordIndex, 1);
-                    localStorage.setItem('records', JSON.stringify(records));
-                    displayRecords(records);
-                    alert('Record deleted successfully');
-                }
+    // Event listener to calculate and display age when date of birth is selected
+    const dobInput = document.getElementById('dob');
+    const ageInput = document.getElementById('age');
+    if (dobInput && ageInput) {
+        dobInput.addEventListener('input', function() {
+            const dob = dobInput.value;
+            if (dob) {
+                ageInput.value = calculateAge(dob);
+            } else {
+                ageInput.value = '';
             }
         });
     }
 
-    function displayRecords(records) {
-        recordList.innerHTML = '';
-        records.forEach(record => {
-            const recordDiv = document.createElement('div');
-            recordDiv.classList.add('record');
-            recordDiv.innerHTML = `
-                <span>${record.id} - ${record.name}</span>
-                <div>
-                    <button class="view-record" data-id="${record.id}">View Record</button>
-                    <button class="delete-record" data-id="${record.id}">Delete Record</button>
-                </div>
-            `;
-            recordList.appendChild(recordDiv);
+    // Function to handle form submission for adding a new record
+    const medicalForm = document.querySelector('.medical-form');
+    if (medicalForm) {
+        medicalForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+            const record = {};
+            formData.forEach((value, key) => {
+                record[key] = value;
+            });
+
+            let records = JSON.parse(localStorage.getItem('medicalRecords')) || [];
+            records.push(record);
+            localStorage.setItem('medicalRecords', JSON.stringify(records));
+
+            alert('Medical record added successfully!');
+            event.target.reset();
+            ageInput.value = '';
+
+            // Redirect to the search record page to display the updated list of records
+            window.location.href = '../MedicalHistoryData/SearchRecord.html';
         });
+    }
+
+    // Function to display records in a table
+    function displayRecords() {
+        const recordList = document.getElementById('record-list');
+        const records = JSON.parse(localStorage.getItem('medicalRecords')) || [];
+        recordList.innerHTML = '';
+
+        if (records.length === 0) {
+            recordList.innerHTML = '<p>No records found.</p>';
+            return;
+        }
+
+        const table = document.createElement('table');
+        table.innerHTML = `
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        `;
+        const tbody = table.querySelector('tbody');
+
+        records.forEach((record, index) => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${record['child-id']}</td>
+                <td>${record['child-name']}</td>
+                <td>${record['age']}</td>
+                <td>${record['gender']}</td>
+                <td>
+                    <button onclick="viewRecord(${index})">View</button>
+                    <button onclick="deleteRecord(${index})">Delete</button>
+                </td>
+            `;
+            tbody.appendChild(tr);
+        });
+
+        recordList.appendChild(table);
+    }
+
+    // Function to view a record
+    window.viewRecord = function(index) {
+        const records = JSON.parse(localStorage.getItem('medicalRecords')) || [];
+        const record = records[index];
+
+        alert(`
+            Child's ID: ${record['child-id']}
+            Child's Name: ${record['child-name']}
+            Date of Birth: ${record['dob']}
+            Age: ${record['age']}
+            Gender: ${record['gender']}
+            Mobile No.: ${record['mobile-no']}
+            Number of Vaccines Taken: ${record['vaccine-count']}
+            Names of Vaccines Taken: ${record['vaccine-names']}
+            Medical History: ${record['medical-history']}
+            Allergies: ${record['allergies']}
+            Current Medications: ${record['medications']}
+            Doctor's Name: ${record['doctor-name']}
+            Doctor's Contact: ${record['doctor-contact']}
+        `);
+    };
+
+    // Function to delete a record
+    window.deleteRecord = function(index) {
+        let records = JSON.parse(localStorage.getItem('medicalRecords')) || [];
+        records.splice(index, 1);
+        localStorage.setItem('medicalRecords', JSON.stringify(records));
+        displayRecords();
+    };
+
+    // Initial call to display records on search record page
+    if (document.getElementById('record-list')) {
+        displayRecords();
     }
 });
