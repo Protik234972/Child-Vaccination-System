@@ -38,21 +38,24 @@
                             <h1>Child Medical Record Form</h1>
                             <p>Please fill out this form with the required information</p>
                         </div>
+
+            <div class="form-columns">
+            <div class="form-column">
                 <div class="form-group">
                     <label for="child-id">Child's ID:</label>
-                    <input type="text" id="child-id" name="child-id" required>
+                    <input type="text" id="child-id" name="child-id" placeholder="Child Id" required>
                 </div>
                 <div class="form-group">
                     <label for="child-name">Child's Name:</label>
-                    <input type="text" id="child-name" name="child-name" required>
+                    <input type="text" id="child-name" name="child-name" placeholder="Child Name" required>
                 </div>
                 <div class="form-group">
                     <label for="dob">Date of Birth:</label>
-                    <input type="date" id="dob" name="dob" required>
+                    <input type="date" id="dob" name="dob" placeholder="Date of Birth" required>
                 </div>
                 <div class="form-group">
                     <label for="age">Age:</label>
-                    <input type="text" id="age" name="age" readonly>
+                    <input type="text" id="age" name="age" placeholder="Age" readonly>
                 </div>
                 <div class="form-group">
                     <label>Gender:</label>
@@ -62,17 +65,20 @@
                         <input type="radio" id="female" name="gender" value="female">
                         <label for="female">Female</label>
                     </div>
+            </div>
+            <div class="form-column">
                 <div class="form-group">
                     <label for="vaccine-count">Number of Vaccines Taken:</label>
                     <input type="number" id="vaccine-count" name="vaccine-count" required>
                 </div>
+
                 <div class="form-group">
                     <label for="vaccine-names">Names of Vaccines Taken:</label>
-                    <textarea id="vaccine-names" name="vaccine-names" rows="3" required></textarea>
+                    <textarea id="vaccine-names" name="vaccine-names" rows="3" placeholder="Name of Vaccines" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="medical-history">Medical History:</label>
-                    <textarea id="medical-history" name="medical-history" rows="5" required></textarea>
+                    <textarea id="medical-history" name="medical-history" rows="5" placeholder="Medical History" required></textarea>
                 </div>
                 <div class="form-group">
                     <label>Allergies:</label>
@@ -85,22 +91,25 @@
                     <label for="allergy3">Gluten</label><br>
                     <input type="checkbox" id="allergy4" name="allergies" value="Shellfish">
                     <label for="allergy4">Shellfish</label><br>
-                    <input type="checkbox" id="allergy5" name="allergies" value="Other">
-                    <label for="allergy5">Other</label>
+                    <input type="checkbox" id="allergy5" name="allergies" value="Meat">
+                    <label for="allergy5">Meat</label><br>
+                    <input type="checkbox" id="allergy6" name="allergies" value="Other">
+                    <label for="allergy6">Other</label>
                     <input type="text" id="other-allergy" name="other-allergy">
                 </div>
                 <div class="form-group">
                     <label for="medications">Current Medications:</label>
-                    <input type="text" id="medications" name="medications">
+                    <input type="text" id="medications" name="medications" placeholder="Current Medications" required>
                 </div>
                 <div class="form-group">
                     <label for="doctor-name">Doctor's Name:</label>
-                    <input type="text" id="doctor-name" name="doctor-name">
+                    <input type="text" id="doctor-name" name="doctor-name" placeholder="Doctor's Name">
                 </div>
                 <div class="form-group">
                     <label for="doctor-contact">Doctor's Contact:</label>
-                    <input type="tel" id="doctor-contact" name="doctor-contact">
+                    <input type="tel" id="doctor-contact" name="doctor-contact" placeholder="01XXXXXXXXX" required>
                 </div>
+            </div>
                 <button type="submit">Add Record</button>
             </form>
         </section>
